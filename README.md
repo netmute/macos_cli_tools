@@ -1,4 +1,4 @@
-# macOS-Only Command-Line Tools
+# macOS command-Line tools
 
 A list of all built-in macOS-specific command-line tools, with descriptions and usage examples.
 
