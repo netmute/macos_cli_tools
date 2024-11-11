@@ -1,6 +1,6 @@
 # macOS-Only Command-Line Tools
 
-A list of macOS-only command-line tools, including their functionalities, usage examples, and reasons you might want to use them.
+A list of all built-in macOS-specific command-line tools, with descriptions and usage examples.
 
 ## All commands
 
