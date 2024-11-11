@@ -107,7 +107,7 @@ If you need to batch-convert audio files, automate audio processing tasks, or pr
 **Usage example:**
 
 ```bash
-# Convert an AIFF file to MP3:  
+# Convert an AIFF file to MP3  
 afconvert input.aiff -o output.mp3 -f MP3
 ```
 
@@ -122,7 +122,7 @@ When managing audio libraries or processing audio files, you might need to verif
 **Usage example:**
 
 ```bash
-# Display information about an audio file:  
+# Display information about an audio file  
 afinfo song.m4a
 ```
 
@@ -137,7 +137,7 @@ If you're working in a terminal session and want to listen to audio files withou
 **Usage example:**
 
 ```bash
-# Play an audio file:  
+# Play an audio file  
 afplay notification.wav
 ```
 
@@ -152,7 +152,7 @@ For troubleshooting Wi-Fi issues, automating network connections, or collecting 
 **Usage example:**
 
 ```bash
-# Scan for available Wi-Fi networks:  
+# Scan for available Wi-Fi networks  
 airport -s
 ```
 
@@ -167,7 +167,7 @@ When you need to deploy a standard system image across multiple Macs, backup a d
 **Usage example:**
 
 ```bash
-# Restore a disk image to a volume:  
+# Restore a disk image to a volume  
 sudo asr restore --source image.dmg --target /Volumes/TargetDrive --erase
 ```
 
@@ -182,7 +182,7 @@ If you're experiencing problems with fonts not displaying correctly, corrupted f
 **Usage example:**
 
 ```bash
-# Reset font caches:  
+# Reset font caches  
 atsutil databases -remove
 ```
 
@@ -197,7 +197,7 @@ Integrating `automator` into scripts enables you to automate complex tasks that 
 **Usage example:**
 
 ```bash
-# Run an Automator workflow:  
+# Run an Automator workflow  
 automator /path/to/workflow.workflow
 ```
 
@@ -212,7 +212,7 @@ When setting up dual-boot systems, creating bootable external drives, or managin
 **Usage example:**
 
 ```bash
-# Set the startup disk to a specific volume:  
+# Set the startup disk to a specific volume  
 sudo bless --mount /Volumes/BootVolume --setBoot
 ```
 
@@ -227,7 +227,7 @@ Useful for ensuring long-running tasks, such as downloads, backups, or presentat
 **Usage example:**
 
 ```bash
-# Prevent sleep for 2 hours:  
+# Prevent sleep for 2 hours  
 caffeinate -t 7200
 ```
 
@@ -242,10 +242,10 @@ To protect critical files from accidental modification or deletion, or to hide f
 **Usage example:**
 
 ```bash
-# Make a file immutable:  
+# Make a file immutable  
 chflags uchg important.doc
 
-# Remove the immutable flag:  
+# Remove the immutable flag  
 chflags nouchg important.doc
 ```
 
@@ -260,7 +260,7 @@ If you're a developer distributing software on macOS, `codesign` ensures your ap
 **Usage example:**
 
 ```bash
-# Sign an application with a development certificate:  
+# Sign an application with a development certificate  
 codesign -s "Developer ID Application: Your Name" /path/to/App.app
 ```
 
@@ -275,7 +275,7 @@ Administrators can automate the creation of home directories for new users, ensu
 **Usage example:**
 
 ```bash
-# Create home directories for all users:  
+# Create home directories for all users  
 sudo createhomedir -c
 ```
 
@@ -290,10 +290,10 @@ Developers or advanced users may need to disable SIP temporarily to install cert
 **Usage example:**
 
 ```bash
-# Disable SIP (requires recovery mode):  
+# Disable SIP (requires recovery mode)  
 csrutil disable
 
-# Enable SIP:  
+# Enable SIP  
 csrutil enable
 ```
 
@@ -308,7 +308,7 @@ To convert documents to formats compatible with specific printers, or to process
 **Usage example:**
 
 ```bash
-# Convert a PDF to a printer-specific format:  
+# Convert a PDF to a printer-specific format  
 cupsfilter -m printer/foo input.pdf > output.pcl
 ```
 
@@ -323,10 +323,10 @@ For tasks like preparing new disks, repairing disk errors, managing disk partiti
 **Usage example:**
 
 ```bash
-# List all disks and partitions:  
+# List all disks and partitions  
 diskutil list
 
-# Erase a disk and format it as HFS+:  
+# Erase a disk and format it as HFS+  
 diskutil eraseDisk HFS+ NewDiskName /dev/disk2
 ```
 
@@ -341,7 +341,7 @@ When `cp` isn't sufficient because it doesn't preserve all macOS-specific metada
 **Usage example:**
 
 ```bash
-# Copy a folder and preserve metadata:  
+# Copy a folder and preserve metadata  
 ditto /source/folder /destination/folder
 ```
 
@@ -356,7 +356,7 @@ To clean up unnecessary files that can cause clutter or compatibility issues whe
 **Usage example:**
 
 ```bash
-# Clean up a USB drive:  
+# Clean up a USB drive  
 dot_clean /Volumes/USBDrive
 ```
 
@@ -371,10 +371,10 @@ For automating disc burning processes, managing discs in servers or kiosks, or c
 **Usage example:**
 
 ```bash
-# Eject the disc tray:  
+# Eject the disc tray  
 drutil tray eject
 
-# Burn an ISO image to disc:  
+# Burn an ISO image to disc  
 drutil burn image.iso
 ```
 
@@ -389,7 +389,7 @@ When experiencing issues with user authentication, DNS resolution, or directory 
 **Usage example:**
 
 ```bash
-# Flush DNS cache:  
+# Flush DNS cache  
 sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 ```
 
@@ -404,7 +404,7 @@ Administrators can script group management tasks, such as adding users to groups
 **Usage example:**
 
 ```bash
-# Add a user to the admin group:  
+# Add a user to the admin group  
 sudo dseditgroup -o edit -a username -t user admin
 ```
 
@@ -419,10 +419,10 @@ In situations where `sudo` is insufficient, enabling the root account allows for
 **Usage example:**
 
 ```bash
-# Enable the root user:  
+# Enable the root user  
 sudo dsenableroot
 
-# Disable the root user:  
+# Disable the root user  
 sudo dsenableroot -d
 ```
 
@@ -437,7 +437,7 @@ To verify group memberships, troubleshoot permission issues, or script checks on
 **Usage example:**
 
 ```bash
-# Check if a user is in a group:  
+# Check if a user is in a group  
 dsmemberutil checkmembership -U username -G groupname
 ```
 
@@ -452,10 +452,10 @@ For automating user and group management, scripting directory service interactio
 **Usage example:**
 
 ```bash
-# List all local users:  
+# List all local users  
 dscl . list /Users
 
-# Create a new user:  
+# Create a new user  
 sudo dscl . -create /Users/newuser
 ```
 
@@ -470,7 +470,7 @@ Useful for real-time monitoring of process execution, debugging, performance ana
 **Usage example:**
 
 ```bash
-# Start monitoring process execution (requires sudo):  
+# Start monitoring process execution (requires sudo)  
 sudo execsnoop
 ```
 
@@ -485,10 +485,10 @@ To automate the deployment of full-disk encryption across multiple systems, ensu
 **Usage example:**
 
 ```bash
-# Enable FileVault:  
+# Enable FileVault  
 sudo fdesetup enable
 
-# Add a user to FileVault:  
+# Add a user to FileVault  
 sudo fdesetup add -usertoadd username
 ```
 
@@ -503,7 +503,7 @@ For diagnosing performance issues, monitoring application file usage, or identif
 **Usage example:**
 
 ```bash
-# Monitor filesystem activity:  
+# Monitor filesystem activity  
 sudo fs_usage
 ```
 
@@ -518,7 +518,7 @@ To inspect file properties that are not visible through standard commands, parti
 **Usage example:**
 
 ```bash
-# Get information about a file:  
+# Get information about a file  
 GetFileInfo myfile.txt
 ```
 
@@ -533,7 +533,7 @@ For creating custom disk images for software distribution, backups, encrypted vo
 **Usage example:**
 
 ```bash
-# Create a disk image from a folder:  
+# Create a disk image from a folder  
 hdiutil create -volname MyDisk -srcfolder /path/to/folder -ov -format UDZO mydisk.dmg
 ```
 
@@ -548,7 +548,7 @@ To automate software installations, especially in deployment scripts or when set
 **Usage example:**
 
 ```bash
-# Install a package:  
+# Install a package  
 sudo installer -pkg package.pkg -target /
 ```
 
@@ -563,7 +563,7 @@ For performance tuning, identifying I/O bottlenecks, or monitoring disk activity
 **Usage example:**
 
 ```bash
-# Start monitoring I/O events (requires sudo):  
+# Start monitoring I/O events (requires sudo)  
 sudo iosnoop
 ```
 
@@ -578,7 +578,7 @@ To locate specific kernel extensions when troubleshooting system issues or verif
 **Usage example:**
 
 ```bash
-# Find all kexts with a specific bundle identifier:  
+# Find all kexts with a specific bundle identifier  
 kextfind -b com.example.driver
 ```
 
@@ -593,7 +593,7 @@ For diagnosing kernel-related problems, ensuring necessary drivers are loaded, o
 **Usage example:**
 
 ```bash
-# List all loaded kernel extensions:  
+# List all loaded kernel extensions  
 kextstat
 ```
 
@@ -608,7 +608,7 @@ To remove problematic drivers without rebooting, update extensions, or temporari
 **Usage example:**
 
 ```bash
-# Unload a kernel extension:  
+# Unload a kernel extension  
 sudo kextunload /System/Library/Extensions/Example.kext
 ```
 
@@ -623,7 +623,7 @@ For setting up remote administration capabilities on multiple Macs, automating A
 **Usage example:**
 
 ```bash
-# Enable ARD and allow access for all users:  
+# Enable ARD and allow access for all users  
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate
 ```
 
@@ -638,10 +638,10 @@ To control background services, schedule tasks, or manage startup items, essenti
 **Usage example:**
 
 ```bash
-# Load a launch agent:  
+# Load a launch agent  
 launchctl load ~/Library/LaunchAgents/com.example.agent.plist
 
-# List all loaded services:  
+# List all loaded services  
 launchctl list
 ```
 
@@ -656,7 +656,7 @@ When experiencing issues like incorrect file associations, applications not appe
 **Usage example:**
 
 ```bash
-# Rebuild the Launch Services database:  
+# Rebuild the Launch Services database  
 /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
 ```
 
@@ -671,7 +671,7 @@ To audit installed files, verify package installations, or understand what files
 **Usage example:**
 
 ```bash
-# List files in a BOM file:  
+# List files in a BOM file  
 lsbom /var/db/receipts/com.example.pkg.bom
 ```
 
@@ -686,7 +686,7 @@ To locate files quickly without scanning the entire filesystem, useful in script
 **Usage example:**
 
 ```bash
-# Find files with "report" in the name:  
+# Find files with "report" in the name  
 mdfind "kMDItemFSName == '*report*'"
 ```
 
@@ -701,7 +701,7 @@ To manually update the Spotlight index after adding or modifying files, ensuring
 **Usage example:**
 
 ```bash
-# Index a folder:  
+# Index a folder  
 mdimport /path/to/folder
 ```
 
@@ -716,7 +716,7 @@ To inspect file metadata for debugging, data analysis, or to use in scripts that
 **Usage example:**
 
 ```bash
-# Show metadata of a file:  
+# Show metadata of a file  
 mdls document.pdf
 ```
 
@@ -731,10 +731,10 @@ To prevent indexing on volumes where it's unnecessary (like backup drives), or t
 **Usage example:**
 
 ```bash
-# Disable indexing on a volume:  
+# Disable indexing on a volume  
 sudo mdutil -i off /Volumes/ExternalDrive
 
-# Rebuild the index:  
+# Rebuild the index  
 sudo mdutil -E /
 ```
 
@@ -749,7 +749,7 @@ For testing disk space usage, simulating large files, benchmarking, or creating 
 **Usage example:**
 
 ```bash
-# Create a 100 MB file:  
+# Create a 100 MB file  
 mkfile 100m largefile.dat
 ```
 
@@ -764,7 +764,7 @@ To diagnose internet connection issues, test network speed, or monitor network q
 **Usage example:**
 
 ```bash
-# Run a network quality test:  
+# Run a network quality test  
 networkQuality
 ```
 
@@ -779,7 +779,7 @@ To automate network setup, switch configurations when moving between locations, 
 **Usage example:**
 
 ```bash
-# Set DNS servers for Wi-Fi:  
+# Set DNS servers for Wi-Fi  
 networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4
 ```
 
@@ -794,7 +794,7 @@ To access NTFS-formatted drives on macOS, particularly for reading data from Win
 **Usage example:**
 
 ```bash
-# Mount an NTFS volume (usually handled automatically):  
+# Mount an NTFS volume (usually handled automatically)  
 ntfs.util -m disk2s1
 ```
 
@@ -809,10 +809,10 @@ For configuring low-level system settings, troubleshooting boot issues, or setti
 **Usage example:**
 
 ```bash
-# Reset NVRAM:  
+# Reset NVRAM  
 sudo nvram -c
 
-# Set a boot argument:  
+# Set a boot argument  
 sudo nvram boot-args="-v"
 ```
 
@@ -827,13 +827,13 @@ To launch applications or files from the command line, integrate with scripts, o
 **Usage example:**
 
 ```bash
-# Open a file with the default application:  
+# Open a file with the default application  
 open report.pdf
 
-# Open a URL in the default browser:  
+# Open a URL in the default browser  
 open https://www.example.com
 
-# Open a file with a specific application:  
+# Open a file with a specific application  
 open -a TextEdit notes.txt
 ```
 
@@ -848,7 +848,7 @@ For security auditing, troubleshooting file access issues, or monitoring applica
 **Usage example:**
 
 ```bash
-# Start monitoring file opens (requires sudo):  
+# Start monitoring file opens (requires sudo)  
 sudo opensnoop
 ```
 
@@ -863,7 +863,7 @@ To automate the compilation of scripts for distribution, integrate scripting int
 **Usage example:**
 
 ```bash
-# Compile an AppleScript into an application:  
+# Compile an AppleScript into an application  
 osacompile -o MyApp.app myscript.scpt
 ```
 
@@ -878,10 +878,10 @@ To automate tasks that require interaction with GUI applications or system servi
 **Usage example:**
 
 ```bash
-# Run an AppleScript file:  
+# Run an AppleScript file  
 osascript myscript.scpt
 
-# Execute an inline AppleScript:  
+# Execute an inline AppleScript  
 osascript -e 'display dialog "Hello, world!"'
 ```
 
@@ -896,7 +896,7 @@ To programmatically copy text or data into the clipboard from scripts or command
 **Usage example:**
 
 ```bash
-# Copy the contents of a file to the clipboard:  
+# Copy the contents of a file to the clipboard  
 cat file.txt | pbcopy
 ```
 
@@ -911,7 +911,7 @@ To retrieve data from the clipboard for use in scripts or to process clipboard c
 **Usage example:**
 
 ```bash
-# Save the clipboard contents to a file:  
+# Save the clipboard contents to a file  
 pbpaste > clipboard.txt
 ```
 
@@ -926,7 +926,7 @@ While not typically used directly, understanding `pbs` can help in troubleshooti
 **Usage example:**
 
 ```bash
-# Restart the pasteboard server:  
+# Restart the pasteboard server  
 killall pbs
 ```
 
@@ -941,7 +941,7 @@ For managing partitions on legacy systems or disks that require APM, which is ne
 **Usage example:**
 
 ```bash
-# List partitions on a disk:  
+# List partitions on a disk  
 pdisk /dev/disk0 -dump
 ```
 
@@ -956,10 +956,10 @@ To enhance network security by controlling inbound and outbound traffic, set up 
 **Usage example:**
 
 ```bash
-# Load a PF configuration file:  
+# Load a PF configuration file  
 sudo pfctl -f /etc/pf.conf
 
-# Enable the PF firewall:  
+# Enable the PF firewall  
 sudo pfctl -e
 ```
 
@@ -974,7 +974,7 @@ Developers and system administrators can package applications, scripts, or setti
 **Usage example:**
 
 ```bash
-# Build a package from a component:  
+# Build a package from a component  
 pkgbuild --root /path/to/root --identifier com.example.pkg --version 1.0 example.pkg
 ```
 
@@ -989,10 +989,10 @@ To troubleshoot installation issues, verify what files were installed by a packa
 **Usage example:**
 
 ```bash
-# List all installed packages:  
+# List all installed packages  
 pkgutil --pkgs
 
-# Forget a package (remove its receipt):  
+# Forget a package (remove its receipt)  
 sudo pkgutil --forget com.example.pkg
 ```
 
@@ -1007,10 +1007,10 @@ To validate plist files, convert between binary and XML formats, or automate cha
 **Usage example:**
 
 ```bash
-# Convert a binary plist to XML:  
+# Convert a binary plist to XML  
 plutil -convert xml1 settings.plist
 
-# Validate a plist file:  
+# Validate a plist file  
 plutil settings.plist
 ```
 
@@ -1025,10 +1025,10 @@ To optimize power usage, extend battery life, or configure systems for specific 
 **Usage example:**
 
 ```bash
-# Set the display sleep timer to 15 minutes:  
+# Set the display sleep timer to 15 minutes  
 sudo pmset displaysleep 15
 
-# Disable sleep mode:  
+# Disable sleep mode  
 sudo pmset sleep 0
 ```
 
@@ -1043,7 +1043,7 @@ For performance analysis, diagnosing battery drain issues, or monitoring system 
 **Usage example:**
 
 ```bash
-# Monitor CPU power usage:  
+# Monitor CPU power usage  
 sudo powermetrics --samplers cpu_power
 ```
 
@@ -1058,10 +1058,10 @@ To deploy settings across multiple machines, enforce security policies, or manag
 **Usage example:**
 
 ```bash
-# List installed profiles:  
+# List installed profiles  
 profiles -P
 
-# Install a profile:  
+# Install a profile  
 sudo profiles -I -F /path/to/profile.mobileconfig
 ```
 
@@ -1076,7 +1076,7 @@ For testing applications under low-memory conditions, clearing inactive memory, 
 **Usage example:**
 
 ```bash
-# Clear disk caches:  
+# Clear disk caches  
 sudo purge
 ```
 
@@ -1091,10 +1091,10 @@ To troubleshoot preview issues, test custom Quick Look plugins, or force the gen
 **Usage example:**
 
 ```bash
-# Preview a file using Quick Look:  
+# Preview a file using Quick Look  
 qlmanage -p document.pdf
 
-# Reset the Quick Look server:  
+# Reset the Quick Look server  
 qlmanage -r
 ```
 
@@ -1109,10 +1109,10 @@ Developers might disable `ReportCrash` during testing to prevent interference, o
 **Usage example:**
 
 ```bash
-# Disable crash reporting:  
+# Disable crash reporting  
 launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
 
-# Enable crash reporting:  
+# Enable crash reporting  
 launchctl load -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
 ```
 
@@ -1127,10 +1127,10 @@ For accessibility purposes, creating spoken alerts in scripts, generating audio 
 **Usage example:**
 
 ```bash
-# Speak a phrase:  
+# Speak a phrase  
 say "Hello, world!"
 
-# Save speech to an audio file:  
+# Save speech to an audio file  
 say -o greeting.aiff "Welcome to the system"
 ```
 
@@ -1145,10 +1145,10 @@ To automate screenshot capture in scripts, document processes, or capture images
 **Usage example:**
 
 ```bash
-# Capture the entire screen:  
+# Capture the entire screen  
 screencapture screen.jpg
 
-# Capture a selected window after a delay:  
+# Capture a selected window after a delay  
 screencapture -w -T5 window.png
 ```
 
@@ -1163,10 +1163,10 @@ To quickly switch between different network setups, such as home and office netw
 **Usage example:**
 
 ```bash
-# List available network locations:  
+# List available network locations  
 scselect
 
-# Switch to a network location named "Office":  
+# Switch to a network location named "Office"  
 scselect "Office"
 ```
 
@@ -1181,10 +1181,10 @@ For advanced network configuration, scripting network setups, or troubleshooting
 **Usage example:**
 
 ```bash
-# Display the current hostname:  
+# Display the current hostname  
 scutil --get HostName
 
-# Set a new hostname:  
+# Set a new hostname  
 sudo scutil --set HostName newhostname
 ```
 
@@ -1199,10 +1199,10 @@ To automate certificate deployment, manage authentication credentials, or script
 **Usage example:**
 
 ```bash
-# List all keychains:  
+# List all keychains  
 security list-keychains
 
-# Import a certificate:  
+# Import a certificate  
 security import cert.pem -k ~/Library/Keychains/login.keychain-db
 ```
 
@@ -1217,7 +1217,7 @@ To verify server configurations, check for installed services, or script server 
 **Usage example:**
 
 ```bash
-# Display server version:  
+# Display server version  
 serverinfo --version
 ```
 
@@ -1232,10 +1232,10 @@ To adjust file properties not accessible through standard tools, useful in batch
 **Usage example:**
 
 ```bash
-# Set the creation date of a file:  
+# Set the creation date of a file  
 SetFile -d "09/30/2023 12:00:00" document.txt
 
-# Make a file invisible:  
+# Make a file invisible  
 SetFile -a V hiddenfile.txt
 ```
 
@@ -1250,10 +1250,10 @@ To automate the setup of shared resources, manage access permissions, or configu
 **Usage example:**
 
 ```bash
-# List all shared folders:  
+# List all shared folders
 sharing -l
 
-# Add a shared folder:  
+# Add a shared folder
 sudo sharing -a /path/to/folder -s "SharedFolder"
 ```
 
@@ -1268,10 +1268,10 @@ To integrate Shortcuts into automation scripts, trigger workflows programmatical
 **Usage example:**
 
 ```bash
-# List all available shortcuts:  
+# List all available shortcuts
 shortcuts list
 
-# Run a shortcut named "Resize Images":  
+# Run a shortcut named "Resize Images"
 shortcuts run "Resize Images"
 ```
 
@@ -1286,10 +1286,10 @@ For scheduling system maintenance, ensuring clean shutdowns in scripts, or remot
 **Usage example:**
 
 ```bash
-# Shut down immediately:  
+# Shut down immediately
 sudo shutdown -h now
 
-# Restart after 1 minute:  
+# Restart after 1 minute
 sudo shutdown -r +1
 ```
 
@@ -1304,10 +1304,10 @@ To batch process images, automate repetitive image editing tasks, or integrate i
 **Usage example:**
 
 ```bash
-# Resize an image to 800x600 pixels:  
+# Resize an image to 800x600 pixels
 sips -z 600 800 input.jpg --out output.jpg
 
-# Convert an image to PNG format:  
+# Convert an image to PNG format
 sips -s format png input.jpg --out output.png
 ```
 
@@ -1322,10 +1322,10 @@ To automate system updates, manage updates across multiple machines, or integrat
 **Usage example:**
 
 ```bash
-# List available updates:  
+# List available updates
 softwareupdate -l
 
-# Install all recommended updates:  
+# Install all recommended updates
 sudo softwareupdate -i -r
 ```
 
@@ -1340,10 +1340,10 @@ To adjust security settings for app execution, whitelist specific applications, 
 **Usage example:**
 
 ```bash
-# Add an application to the whitelist:  
+# Add an application to the whitelist
 spctl --add /Applications/Example.app
 
-# Check the status of an application:  
+# Check the status of an application
 spctl --assess --verbose=4 /Applications/Example.app
 ```
 
@@ -1358,7 +1358,7 @@ To check system version information in scripts, ensure compatibility, or log sys
 **Usage example:**
 
 ```bash
-# Display macOS version information:  
+# Display macOS version information
 sw_vers
 ```
 
@@ -1373,10 +1373,10 @@ For inventory management, diagnostics, or collecting system information for supp
 **Usage example:**
 
 ```bash
-# Generate a full system report:  
+# Generate a full system report
 system_profiler
 
-# Save the report to a file:  
+# Save the report to a file
 system_profiler -detailLevel full > system_report.txt
 ```
 
@@ -1391,10 +1391,10 @@ To automate configuration tasks, standardize settings across multiple machines, 
 **Usage example:**
 
 ```bash
-# Set the time zone:  
+# Set the time zone
 sudo systemsetup -settimezone "America/New_York"
 
-# Enable network time synchronization:  
+# Enable network time synchronization
 sudo systemsetup -setusingnetworktime on
 ```
 
@@ -1409,7 +1409,7 @@ To format code or text files according to style guidelines, or to prepare files 
 **Usage example:**
 
 ```bash
-# Convert tabs to spaces in a file:  
+# Convert tabs to spaces in a file
 tab2space -t 4 input.txt > output.txt
 ```
 
@@ -1424,7 +1424,7 @@ To limit the resource impact of a process, ensuring it doesn't interfere with ot
 **Usage example:**
 
 ```bash
-# Run a command with low CPU priority:  
+# Run a command with low CPU priority
 taskpolicy -c low command
 ```
 
@@ -1439,7 +1439,7 @@ To reset permissions for apps accessing the camera, microphone, or other sensiti
 **Usage example:**
 
 ```bash
-# Reset all permissions for an app:  
+# Reset all permissions for an app
 tccutil reset All com.example.app
 ```
 
@@ -1454,10 +1454,10 @@ To batch convert documents, extract text from rich text files, or automate text 
 **Usage example:**
 
 ```bash
-# Convert a Word document to plain text:  
+# Convert a Word document to plain text
 textutil -convert txt document.docx
 
-# Combine multiple text files into one RTF:  
+# Combine multiple text files into one RTF
 textutil -cat rtf file1.txt file2.txt -output combined.rtf
 ```
 
@@ -1472,10 +1472,10 @@ To automate backup processes, manage backup destinations, exclude items from bac
 **Usage example:**
 
 ```bash
-# Start a backup manually:  
+# Start a backup manually
 tmutil startbackup
 
-# Set a new backup destination:  
+# Set a new backup destination
 sudo tmutil setdestination /Volumes/BackupDrive
 ```
 
@@ -1490,7 +1490,7 @@ If you're using a third-party SSD, enabling TRIM helps maintain optimal performa
 **Usage example:**
 
 ```bash
-# Enable TRIM support:  
+# Enable TRIM support
 sudo trimforce enable
 ```
 
@@ -1505,7 +1505,7 @@ For managing UFS volumes, though it's largely obsolete in modern macOS environme
 **Usage example:**
 
 ```bash
-# Mount a UFS filesystem:  
+# Mount a UFS filesystem
 ufs.util -m disk2s1
 ```
 
@@ -1520,7 +1520,7 @@ To ensure that a script doesn't proceed until a necessary resource is available,
 **Usage example:**
 
 ```bash
-# Wait for a volume to mount:  
+# Wait for a volume to mount
 wait4path /Volumes/ExternalDrive
 ```
 
@@ -1535,7 +1535,7 @@ For troubleshooting Wi-Fi connectivity issues, analyzing signal strength, or col
 **Usage example:**
 
 ```bash
-# Start a Wi-Fi diagnostics capture:  
+# Start a Wi-Fi diagnostics capture
 sudo wdutil capture
 ```
 
@@ -1550,10 +1550,10 @@ To remove quarantine flags from downloaded files, manage custom metadata, or fix
 **Usage example:**
 
 ```bash
-# List extended attributes of a file:  
+# List extended attributes of a file
 xattr -l downloaded.app
 
-# Remove the quarantine attribute:  
+# Remove the quarantine attribute
 xattr -d com.apple.quarantine downloaded.app
 ```
 
@@ -1568,9 +1568,9 @@ To configure development environments, switch between multiple versions of Xcode
 **Usage example:**
 
 ```bash
-# Install command-line developer tools:  
+# Install command-line developer tools
 xcode-select --install
 
-# Switch to a different Xcode version:  
+# Switch to a different Xcode version
 sudo xcode-select -s /Applications/Xcode_12.app
 ```
