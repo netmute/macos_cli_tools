@@ -106,8 +106,10 @@ If you need to batch-convert audio files, automate audio processing tasks, or pr
 
 **Usage example:**
 
-- Convert an AIFF file to MP3:  
-  `afconvert input.aiff -o output.mp3 -f MP3`
+```bash
+# Convert an AIFF file to MP3:  
+afconvert input.aiff -o output.mp3 -f MP3
+```
 
 ## `afinfo` - Audio File Info
 
@@ -119,8 +121,10 @@ When managing audio libraries or processing audio files, you might need to verif
 
 **Usage example:**
 
-- Display information about an audio file:  
-  `afinfo song.m4a`
+```bash
+# Display information about an audio file:  
+afinfo song.m4a
+```
 
 ## `afplay` - Audio File Play
 
@@ -132,8 +136,10 @@ If you're working in a terminal session and want to listen to audio files withou
 
 **Usage example:**
 
-- Play an audio file:  
-  `afplay notification.wav`
+```bash
+# Play an audio file:  
+afplay notification.wav
+```
 
 ## `airport` - Manage Apple AirPort
 
@@ -145,8 +151,10 @@ For troubleshooting Wi-Fi issues, automating network connections, or collecting 
 
 **Usage example:**
 
-- Scan for available Wi-Fi networks:  
-  `airport -s`
+```bash
+# Scan for available Wi-Fi networks:  
+airport -s
+```
 
 ## `asr` - Apple Software Restore
 
@@ -158,8 +166,10 @@ When you need to deploy a standard system image across multiple Macs, backup a d
 
 **Usage example:**
 
-- Restore a disk image to a volume:  
-  `sudo asr restore --source image.dmg --target /Volumes/TargetDrive --erase`
+```bash
+# Restore a disk image to a volume:  
+sudo asr restore --source image.dmg --target /Volumes/TargetDrive --erase
+```
 
 ## `atsutil` - Font Registration System Utility
 
@@ -171,8 +181,10 @@ If you're experiencing problems with fonts not displaying correctly, corrupted f
 
 **Usage example:**
 
-- Reset font caches:  
-  `atsutil databases -remove`
+```bash
+# Reset font caches:  
+atsutil databases -remove
+```
 
 ## `automator` - Run an Automator Workflow
 
@@ -184,8 +196,10 @@ Integrating `automator` into scripts enables you to automate complex tasks that 
 
 **Usage example:**
 
-- Run an Automator workflow:  
-  `automator /path/to/workflow.workflow`
+```bash
+# Run an Automator workflow:  
+automator /path/to/workflow.workflow
+```
 
 ## `bless` - Set Volume Bootability and Startup Disk Options
 
@@ -197,8 +211,10 @@ When setting up dual-boot systems, creating bootable external drives, or managin
 
 **Usage example:**
 
-- Set the startup disk to a specific volume:  
-  `sudo bless --mount /Volumes/BootVolume --setBoot`
+```bash
+# Set the startup disk to a specific volume:  
+sudo bless --mount /Volumes/BootVolume --setBoot
+```
 
 ## `caffeinate` - Prevent the System from Sleeping
 
@@ -210,8 +226,10 @@ Useful for ensuring long-running tasks, such as downloads, backups, or presentat
 
 **Usage example:**
 
-- Prevent sleep for 2 hours:  
-  `caffeinate -t 7200`
+```bash
+# Prevent sleep for 2 hours:  
+caffeinate -t 7200
+```
 
 ## `chflags` - Change a File or Folder's Flags
 
@@ -223,11 +241,13 @@ To protect critical files from accidental modification or deletion, or to hide f
 
 **Usage example:**
 
-- Make a file immutable:  
-  `chflags uchg important.doc`
+```bash
+# Make a file immutable:  
+chflags uchg important.doc
 
-- Remove the immutable flag:  
-  `chflags nouchg important.doc`
+# Remove the immutable flag:  
+chflags nouchg important.doc
+```
 
 ## `codesign` - Create and Manipulate Code Signatures
 
@@ -239,8 +259,10 @@ If you're a developer distributing software on macOS, `codesign` ensures your ap
 
 **Usage example:**
 
-- Sign an application with a development certificate:  
-  `codesign -s "Developer ID Application: Your Name" /path/to/App.app`
+```bash
+# Sign an application with a development certificate:  
+codesign -s "Developer ID Application: Your Name" /path/to/App.app
+```
 
 ## `createhomedir` - Create and Populate Home Directories
 
@@ -252,8 +274,10 @@ Administrators can automate the creation of home directories for new users, ensu
 
 **Usage example:**
 
-- Create home directories for all users:  
-  `sudo createhomedir -c`
+```bash
+# Create home directories for all users:  
+sudo createhomedir -c
+```
 
 ## `csrutil` - Configure System Integrity Protection (SIP)
 
@@ -265,11 +289,13 @@ Developers or advanced users may need to disable SIP temporarily to install cert
 
 **Usage example:**
 
-- Disable SIP (requires recovery mode):  
-  `csrutil disable`
+```bash
+# Disable SIP (requires recovery mode):  
+csrutil disable
 
-- Enable SIP:  
-  `csrutil enable`
+# Enable SIP:  
+csrutil enable
+```
 
 ## `cupsfilter` - Convert Files Using CUPS Filters
 
@@ -281,8 +307,10 @@ To convert documents to formats compatible with specific printers, or to process
 
 **Usage example:**
 
-- Convert a PDF to a printer-specific format:  
-  `cupsfilter -m printer/foo input.pdf > output.pcl`
+```bash
+# Convert a PDF to a printer-specific format:  
+cupsfilter -m printer/foo input.pdf > output.pcl
+```
 
 ## `diskutil` - Disk Utilities
 
@@ -294,11 +322,13 @@ For tasks like preparing new disks, repairing disk errors, managing disk partiti
 
 **Usage example:**
 
-- List all disks and partitions:  
-  `diskutil list`
+```bash
+# List all disks and partitions:  
+diskutil list
 
-- Erase a disk and format it as HFS+:  
-  `diskutil eraseDisk HFS+ NewDiskName /dev/disk2`
+# Erase a disk and format it as HFS+:  
+diskutil eraseDisk HFS+ NewDiskName /dev/disk2
+```
 
 ## `ditto` - Copy Files and Folders
 
@@ -310,8 +340,10 @@ When `cp` isn't sufficient because it doesn't preserve all macOS-specific metada
 
 **Usage example:**
 
-- Copy a folder and preserve metadata:  
-  `ditto /source/folder /destination/folder`
+```bash
+# Copy a folder and preserve metadata:  
+ditto /source/folder /destination/folder
+```
 
 ## `dot_clean` - Remove Dot-Underscore Files
 
@@ -323,8 +355,10 @@ To clean up unnecessary files that can cause clutter or compatibility issues whe
 
 **Usage example:**
 
-- Clean up a USB drive:  
-  `dot_clean /Volumes/USBDrive`
+```bash
+# Clean up a USB drive:  
+dot_clean /Volumes/USBDrive
+```
 
 ## `drutil` - Interact with CD/DVD Burners
 
@@ -336,11 +370,13 @@ For automating disc burning processes, managing discs in servers or kiosks, or c
 
 **Usage example:**
 
-- Eject the disc tray:  
-  `drutil tray eject`
+```bash
+# Eject the disc tray:  
+drutil tray eject
 
-- Burn an ISO image to disc:  
-  `drutil burn image.iso`
+# Burn an ISO image to disc:  
+drutil burn image.iso
+```
 
 ## `dscacheutil` - Directory Service Cache Utility
 
@@ -352,8 +388,10 @@ When experiencing issues with user authentication, DNS resolution, or directory 
 
 **Usage example:**
 
-- Flush DNS cache:  
-  `sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder`
+```bash
+# Flush DNS cache:  
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+```
 
 ## `dseditgroup` - Edit Groups
 
@@ -365,8 +403,10 @@ Administrators can script group management tasks, such as adding users to groups
 
 **Usage example:**
 
-- Add a user to the admin group:  
-  `sudo dseditgroup -o edit -a username -t user admin`
+```bash
+# Add a user to the admin group:  
+sudo dseditgroup -o edit -a username -t user admin
+```
 
 ## `dsenableroot` - Enable Root Access
 
@@ -378,11 +418,13 @@ In situations where `sudo` is insufficient, enabling the root account allows for
 
 **Usage example:**
 
-- Enable the root user:  
-  `sudo dsenableroot`
+```bash
+# Enable the root user:  
+sudo dsenableroot
 
-- Disable the root user:  
-  `sudo dsenableroot -d`
+# Disable the root user:  
+sudo dsenableroot -d
+```
 
 ## `dsmemberutil` - View User and Group Rights
 
@@ -394,8 +436,10 @@ To verify group memberships, troubleshoot permission issues, or script checks on
 
 **Usage example:**
 
-- Check if a user is in a group:  
-  `dsmemberutil checkmembership -U username -G groupname`
+```bash
+# Check if a user is in a group:  
+dsmemberutil checkmembership -U username -G groupname
+```
 
 ## `dscl` - Directory Service Command Line
 
@@ -407,11 +451,13 @@ For automating user and group management, scripting directory service interactio
 
 **Usage example:**
 
-- List all local users:  
-  `dscl . list /Users`
+```bash
+# List all local users:  
+dscl . list /Users
 
-- Create a new user:  
-  `sudo dscl . -create /Users/newuser`
+# Create a new user:  
+sudo dscl . -create /Users/newuser
+```
 
 ## `execsnoop` - Snoop New Process Execution
 
@@ -423,8 +469,10 @@ Useful for real-time monitoring of process execution, debugging, performance ana
 
 **Usage example:**
 
-- Start monitoring process execution (requires sudo):  
-  `sudo execsnoop`
+```bash
+# Start monitoring process execution (requires sudo):  
+sudo execsnoop
+```
 
 ## `fdesetup` - FileVault Setup Utility
 
@@ -436,11 +484,13 @@ To automate the deployment of full-disk encryption across multiple systems, ensu
 
 **Usage example:**
 
-- Enable FileVault:  
-  `sudo fdesetup enable`
+```bash
+# Enable FileVault:  
+sudo fdesetup enable
 
-- Add a user to FileVault:  
-  `sudo fdesetup add -usertoadd username`
+# Add a user to FileVault:  
+sudo fdesetup add -usertoadd username
+```
 
 ## `fs_usage` - Filesystem Activity Monitor
 
@@ -452,8 +502,10 @@ For diagnosing performance issues, monitoring application file usage, or identif
 
 **Usage example:**
 
-- Monitor filesystem activity:  
-  `sudo fs_usage`
+```bash
+# Monitor filesystem activity:  
+sudo fs_usage
+```
 
 ## `GetFileInfo` - Get HFS+ File Attributes
 
@@ -465,8 +517,10 @@ To inspect file properties that are not visible through standard commands, parti
 
 **Usage example:**
 
-- Get information about a file:  
-  `GetFileInfo myfile.txt`
+```bash
+# Get information about a file:  
+GetFileInfo myfile.txt
+```
 
 ## `hdiutil` - Manipulate Disk Images
 
@@ -478,8 +532,10 @@ For creating custom disk images for software distribution, backups, encrypted vo
 
 **Usage example:**
 
-- Create a disk image from a folder:  
-  `hdiutil create -volname MyDisk -srcfolder /path/to/folder -ov -format UDZO mydisk.dmg`
+```bash
+# Create a disk image from a folder:  
+hdiutil create -volname MyDisk -srcfolder /path/to/folder -ov -format UDZO mydisk.dmg
+```
 
 ## `installer` - Install macOS Packages
 
@@ -491,8 +547,10 @@ To automate software installations, especially in deployment scripts or when set
 
 **Usage example:**
 
-- Install a package:  
-  `sudo installer -pkg package.pkg -target /`
+```bash
+# Install a package:  
+sudo installer -pkg package.pkg -target /
+```
 
 ## `iosnoop` - Monitor I/O Events
 
@@ -504,8 +562,10 @@ For performance tuning, identifying I/O bottlenecks, or monitoring disk activity
 
 **Usage example:**
 
-- Start monitoring I/O events (requires sudo):  
-  `sudo iosnoop`
+```bash
+# Start monitoring I/O events (requires sudo):  
+sudo iosnoop
+```
 
 ## `kextfind` - Find Kernel Extensions
 
@@ -517,8 +577,10 @@ To locate specific kernel extensions when troubleshooting system issues or verif
 
 **Usage example:**
 
-- Find all kexts with a specific bundle identifier:  
-  `kextfind -b com.example.driver`
+```bash
+# Find all kexts with a specific bundle identifier:  
+kextfind -b com.example.driver
+```
 
 ## `kextstat` - Kernel Extension Status
 
@@ -530,8 +592,10 @@ For diagnosing kernel-related problems, ensuring necessary drivers are loaded, o
 
 **Usage example:**
 
-- List all loaded kernel extensions:  
-  `kextstat`
+```bash
+# List all loaded kernel extensions:  
+kextstat
+```
 
 ## `kextunload` - Unload Kernel Extensions
 
@@ -543,8 +607,10 @@ To remove problematic drivers without rebooting, update extensions, or temporari
 
 **Usage example:**
 
-- Unload a kernel extension:  
-  `sudo kextunload /System/Library/Extensions/Example.kext`
+```bash
+# Unload a kernel extension:  
+sudo kextunload /System/Library/Extensions/Example.kext
+```
 
 ## `kickstart` - Configure Apple Remote Desktop
 
@@ -556,8 +622,10 @@ For setting up remote administration capabilities on multiple Macs, automating A
 
 **Usage example:**
 
-- Enable ARD and allow access for all users:  
-  `sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate`
+```bash
+# Enable ARD and allow access for all users:  
+sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate
+```
 
 ## `launchctl` - Manage Daemons and Agents
 
@@ -569,11 +637,13 @@ To control background services, schedule tasks, or manage startup items, essenti
 
 **Usage example:**
 
-- Load a launch agent:  
-  `launchctl load ~/Library/LaunchAgents/com.example.agent.plist`
+```bash
+# Load a launch agent:  
+launchctl load ~/Library/LaunchAgents/com.example.agent.plist
 
-- List all loaded services:  
-  `launchctl list`
+# List all loaded services:  
+launchctl list
+```
 
 ## `lsregister` - Launch Services Database Management
 
@@ -585,8 +655,10 @@ When experiencing issues like incorrect file associations, applications not appe
 
 **Usage example:**
 
-- Rebuild the Launch Services database:  
-  `/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user`
+```bash
+# Rebuild the Launch Services database:  
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user
+```
 
 ## `lsbom` - List Bill of Materials
 
@@ -598,8 +670,10 @@ To audit installed files, verify package installations, or understand what files
 
 **Usage example:**
 
-- List files in a BOM file:  
-  `lsbom /var/db/receipts/com.example.pkg.bom`
+```bash
+# List files in a BOM file:  
+lsbom /var/db/receipts/com.example.pkg.bom
+```
 
 ## `mdfind` - Spotlight Search from the Command Line
 
@@ -611,8 +685,10 @@ To locate files quickly without scanning the entire filesystem, useful in script
 
 **Usage example:**
 
-- Find files with "report" in the name:  
-  `mdfind "kMDItemFSName == '*report*'"`
+```bash
+# Find files with "report" in the name:  
+mdfind "kMDItemFSName == '*report*'"
+```
 
 ## `mdimport` - Import Files into Spotlight Index
 
@@ -624,8 +700,10 @@ To manually update the Spotlight index after adding or modifying files, ensuring
 
 **Usage example:**
 
-- Index a folder:  
-  `mdimport /path/to/folder`
+```bash
+# Index a folder:  
+mdimport /path/to/folder
+```
 
 ## `mdls` - Display Metadata Attributes
 
@@ -637,8 +715,10 @@ To inspect file metadata for debugging, data analysis, or to use in scripts that
 
 **Usage example:**
 
-- Show metadata of a file:  
-  `mdls document.pdf`
+```bash
+# Show metadata of a file:  
+mdls document.pdf
+```
 
 ## `mdutil` - Manage Spotlight Indexing
 
@@ -650,11 +730,13 @@ To prevent indexing on volumes where it's unnecessary (like backup drives), or t
 
 **Usage example:**
 
-- Disable indexing on a volume:  
-  `sudo mdutil -i off /Volumes/ExternalDrive`
+```bash
+# Disable indexing on a volume:  
+sudo mdutil -i off /Volumes/ExternalDrive
 
-- Rebuild the index:  
-  `sudo mdutil -E /`
+# Rebuild the index:  
+sudo mdutil -E /
+```
 
 ## `mkfile` - Create a File with a Specific Size
 
@@ -666,8 +748,10 @@ For testing disk space usage, simulating large files, benchmarking, or creating 
 
 **Usage example:**
 
-- Create a 100 MB file:  
-  `mkfile 100m largefile.dat`
+```bash
+# Create a 100 MB file:  
+mkfile 100m largefile.dat
+```
 
 ## `networkQuality` - Network Performance Testing
 
@@ -679,8 +763,10 @@ To diagnose internet connection issues, test network speed, or monitor network q
 
 **Usage example:**
 
-- Run a network quality test:  
-  `networkQuality`
+```bash
+# Run a network quality test:  
+networkQuality
+```
 
 ## `networksetup` - Configure Network Settings
 
@@ -692,8 +778,10 @@ To automate network setup, switch configurations when moving between locations, 
 
 **Usage example:**
 
-- Set DNS servers for Wi-Fi:  
-  `networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4`
+```bash
+# Set DNS servers for Wi-Fi:  
+networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4
+```
 
 ## `ntfs.util` - NTFS Filesystem Utility
 
@@ -705,8 +793,10 @@ To access NTFS-formatted drives on macOS, particularly for reading data from Win
 
 **Usage example:**
 
-- Mount an NTFS volume (usually handled automatically):  
-  `ntfs.util -m disk2s1`
+```bash
+# Mount an NTFS volume (usually handled automatically):  
+ntfs.util -m disk2s1
+```
 
 ## `nvram` - Manipulate Firmware Variables
 
@@ -718,11 +808,13 @@ For configuring low-level system settings, troubleshooting boot issues, or setti
 
 **Usage example:**
 
-- Reset NVRAM:  
-  `sudo nvram -c`
+```bash
+# Reset NVRAM:  
+sudo nvram -c
 
-- Set a boot argument:  
-  `sudo nvram boot-args="-v"`
+# Set a boot argument:  
+sudo nvram boot-args="-v"
+```
 
 ## `open` - Open Files and Applications
 
@@ -734,14 +826,16 @@ To launch applications or files from the command line, integrate with scripts, o
 
 **Usage example:**
 
-- Open a file with the default application:  
-  `open report.pdf`
+```bash
+# Open a file with the default application:  
+open report.pdf
 
-- Open a URL in the default browser:  
-  `open https://www.example.com`
+# Open a URL in the default browser:  
+open https://www.example.com
 
-- Open a file with a specific application:  
-  `open -a TextEdit notes.txt`
+# Open a file with a specific application:  
+open -a TextEdit notes.txt
+```
 
 ## `opensnoop` - Monitor File Opens
 
@@ -753,8 +847,10 @@ For security auditing, troubleshooting file access issues, or monitoring applica
 
 **Usage example:**
 
-- Start monitoring file opens (requires sudo):  
-  `sudo opensnoop`
+```bash
+# Start monitoring file opens (requires sudo):  
+sudo opensnoop
+```
 
 ## `osacompile` - Compile AppleScript Scripts
 
@@ -766,8 +862,10 @@ To automate the compilation of scripts for distribution, integrate scripting int
 
 **Usage example:**
 
-- Compile an AppleScript into an application:  
-  `osacompile -o MyApp.app myscript.scpt`
+```bash
+# Compile an AppleScript into an application:  
+osacompile -o MyApp.app myscript.scpt
+```
 
 ## `osascript` - Execute AppleScript and Other OSA Scripts
 
@@ -779,11 +877,13 @@ To automate tasks that require interaction with GUI applications or system servi
 
 **Usage example:**
 
-- Run an AppleScript file:  
-  `osascript myscript.scpt`
+```bash
+# Run an AppleScript file:  
+osascript myscript.scpt
 
-- Execute an inline AppleScript:  
-  `osascript -e 'display dialog "Hello, world!"'`
+# Execute an inline AppleScript:  
+osascript -e 'display dialog "Hello, world!"'
+```
 
 ## `pbcopy` - Copy Data to the Clipboard
 
@@ -795,8 +895,10 @@ To programmatically copy text or data into the clipboard from scripts or command
 
 **Usage example:**
 
-- Copy the contents of a file to the clipboard:  
-  `cat file.txt | pbcopy`
+```bash
+# Copy the contents of a file to the clipboard:  
+cat file.txt | pbcopy
+```
 
 ## `pbpaste` - Paste Data from the Clipboard
 
@@ -808,8 +910,10 @@ To retrieve data from the clipboard for use in scripts or to process clipboard c
 
 **Usage example:**
 
-- Save the clipboard contents to a file:  
-  `pbpaste > clipboard.txt`
+```bash
+# Save the clipboard contents to a file:  
+pbpaste > clipboard.txt
+```
 
 ## `pbs` - Pasteboard Server Helper Tool
 
@@ -821,8 +925,10 @@ While not typically used directly, understanding `pbs` can help in troubleshooti
 
 **Usage example:**
 
-- Restart the pasteboard server:  
-  `killall pbs`
+```bash
+# Restart the pasteboard server:  
+killall pbs
+```
 
 ## `pdisk` - Apple Partition Table Editor
 
@@ -834,8 +940,10 @@ For managing partitions on legacy systems or disks that require APM, which is ne
 
 **Usage example:**
 
-- List partitions on a disk:  
-  `pdisk /dev/disk0 -dump`
+```bash
+# List partitions on a disk:  
+pdisk /dev/disk0 -dump
+```
 
 ## `pfctl` - Packet Filter Control
 
@@ -847,11 +955,13 @@ To enhance network security by controlling inbound and outbound traffic, set up 
 
 **Usage example:**
 
-- Load a PF configuration file:  
-  `sudo pfctl -f /etc/pf.conf`
+```bash
+# Load a PF configuration file:  
+sudo pfctl -f /etc/pf.conf
 
-- Enable the PF firewall:  
-  `sudo pfctl -e`
+# Enable the PF firewall:  
+sudo pfctl -e
+```
 
 ## `pkgbuild` - Build Installer Packages
 
@@ -863,8 +973,10 @@ Developers and system administrators can package applications, scripts, or setti
 
 **Usage example:**
 
-- Build a package from a component:  
-  `pkgbuild --root /path/to/root --identifier com.example.pkg --version 1.0 example.pkg`
+```bash
+# Build a package from a component:  
+pkgbuild --root /path/to/root --identifier com.example.pkg --version 1.0 example.pkg
+```
 
 ## `pkgutil` - Package Manager Utility
 
@@ -876,11 +988,13 @@ To troubleshoot installation issues, verify what files were installed by a packa
 
 **Usage example:**
 
-- List all installed packages:  
-  `pkgutil --pkgs`
+```bash
+# List all installed packages:  
+pkgutil --pkgs
 
-- Forget a package (remove its receipt):  
-  `sudo pkgutil --forget com.example.pkg`
+# Forget a package (remove its receipt):  
+sudo pkgutil --forget com.example.pkg
+```
 
 ## `plutil` - Property List Utility
 
@@ -892,11 +1006,13 @@ To validate plist files, convert between binary and XML formats, or automate cha
 
 **Usage example:**
 
-- Convert a binary plist to XML:  
-  `plutil -convert xml1 settings.plist`
+```bash
+# Convert a binary plist to XML:  
+plutil -convert xml1 settings.plist
 
-- Validate a plist file:  
-  `plutil settings.plist`
+# Validate a plist file:  
+plutil settings.plist
+```
 
 ## `pmset` - Power Management Settings
 
@@ -908,11 +1024,13 @@ To optimize power usage, extend battery life, or configure systems for specific 
 
 **Usage example:**
 
-- Set the display sleep timer to 15 minutes:  
-  `sudo pmset displaysleep 15`
+```bash
+# Set the display sleep timer to 15 minutes:  
+sudo pmset displaysleep 15
 
-- Disable sleep mode:  
-  `sudo pmset sleep 0`
+# Disable sleep mode:  
+sudo pmset sleep 0
+```
 
 ## `powermetrics` - Power and Performance Statistics
 
@@ -924,8 +1042,10 @@ For performance analysis, diagnosing battery drain issues, or monitoring system 
 
 **Usage example:**
 
-- Monitor CPU power usage:  
-  `sudo powermetrics --samplers cpu_power`
+```bash
+# Monitor CPU power usage:  
+sudo powermetrics --samplers cpu_power
+```
 
 ## `profiles` - Configuration Profiles Management
 
@@ -937,11 +1057,13 @@ To deploy settings across multiple machines, enforce security policies, or manag
 
 **Usage example:**
 
-- List installed profiles:  
-  `profiles -P`
+```bash
+# List installed profiles:  
+profiles -P
 
-- Install a profile:  
-  `sudo profiles -I -F /path/to/profile.mobileconfig`
+# Install a profile:  
+sudo profiles -I -F /path/to/profile.mobileconfig
+```
 
 ## `purge` - Clear Disk Cache
 
@@ -953,8 +1075,10 @@ For testing applications under low-memory conditions, clearing inactive memory, 
 
 **Usage example:**
 
-- Clear disk caches:  
-  `sudo purge`
+```bash
+# Clear disk caches:  
+sudo purge
+```
 
 ## `qlmanage` - Quick Look Management Tool
 
@@ -966,11 +1090,13 @@ To troubleshoot preview issues, test custom Quick Look plugins, or force the gen
 
 **Usage example:**
 
-- Preview a file using Quick Look:  
-  `qlmanage -p document.pdf`
+```bash
+# Preview a file using Quick Look:  
+qlmanage -p document.pdf
 
-- Reset the Quick Look server:  
-  `qlmanage -r`
+# Reset the Quick Look server:  
+qlmanage -r
+```
 
 ## `ReportCrash` - Crash Reporting
 
@@ -982,11 +1108,13 @@ Developers might disable `ReportCrash` during testing to prevent interference, o
 
 **Usage example:**
 
-- Disable crash reporting:  
-  `launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist`
+```bash
+# Disable crash reporting:  
+launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
 
-- Enable crash reporting:  
-  `launchctl load -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist`
+# Enable crash reporting:  
+launchctl load -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist
+```
 
 ## `say` - Text-to-Speech Utility
 
@@ -998,11 +1126,13 @@ For accessibility purposes, creating spoken alerts in scripts, generating audio 
 
 **Usage example:**
 
-- Speak a phrase:  
-  `say "Hello, world!"`
+```bash
+# Speak a phrase:  
+say "Hello, world!"
 
-- Save speech to an audio file:  
-  `say -o greeting.aiff "Welcome to the system"`
+# Save speech to an audio file:  
+say -o greeting.aiff "Welcome to the system"
+```
 
 ## `screencapture` - Capture Screenshots
 
@@ -1014,11 +1144,13 @@ To automate screenshot capture in scripts, document processes, or capture images
 
 **Usage example:**
 
-- Capture the entire screen:  
-  `screencapture screen.jpg`
+```bash
+# Capture the entire screen:  
+screencapture screen.jpg
 
-- Capture a selected window after a delay:  
-  `screencapture -w -T5 window.png`
+# Capture a selected window after a delay:  
+screencapture -w -T5 window.png
+```
 
 ## `scselect` - Switch Network Locations
 
@@ -1030,11 +1162,13 @@ To quickly switch between different network setups, such as home and office netw
 
 **Usage example:**
 
-- List available network locations:  
-  `scselect`
+```bash
+# List available network locations:  
+scselect
 
-- Switch to a network location named "Office":  
-  `scselect "Office"`
+# Switch to a network location named "Office":  
+scselect "Office"
+```
 
 ## `scutil` - System Configuration Utility
 
@@ -1046,11 +1180,13 @@ For advanced network configuration, scripting network setups, or troubleshooting
 
 **Usage example:**
 
-- Display the current hostname:  
-  `scutil --get HostName`
+```bash
+# Display the current hostname:  
+scutil --get HostName
 
-- Set a new hostname:  
-  `sudo scutil --set HostName newhostname`
+# Set a new hostname:  
+sudo scutil --set HostName newhostname
+```
 
 ## `security` - Manage Keychains and Certificates
 
@@ -1062,11 +1198,13 @@ To automate certificate deployment, manage authentication credentials, or script
 
 **Usage example:**
 
-- List all keychains:  
-  `security list-keychains`
+```bash
+# List all keychains:  
+security list-keychains
 
-- Import a certificate:  
-  `security import cert.pem -k ~/Library/Keychains/login.keychain-db`
+# Import a certificate:  
+security import cert.pem -k ~/Library/Keychains/login.keychain-db
+```
 
 ## `serverinfo` - macOS Server Information
 
@@ -1078,8 +1216,10 @@ To verify server configurations, check for installed services, or script server 
 
 **Usage example:**
 
-- Display server version:  
-  `serverinfo --version`
+```bash
+# Display server version:  
+serverinfo --version
+```
 
 ## `setfile` - Set File Attributes
 
@@ -1091,11 +1231,13 @@ To adjust file properties not accessible through standard tools, useful in batch
 
 **Usage example:**
 
-- Set the creation date of a file:  
-  `SetFile -d "09/30/2023 12:00:00" document.txt`
+```bash
+# Set the creation date of a file:  
+SetFile -d "09/30/2023 12:00:00" document.txt
 
-- Make a file invisible:  
-  `SetFile -a V hiddenfile.txt`
+# Make a file invisible:  
+SetFile -a V hiddenfile.txt
+```
 
 ## `sharing` - Configure File Sharing
 
@@ -1107,11 +1249,13 @@ To automate the setup of shared resources, manage access permissions, or configu
 
 **Usage example:**
 
-- List all shared folders:  
-  `sharing -l`
+```bash
+# List all shared folders:  
+sharing -l
 
-- Add a shared folder:  
-  `sudo sharing -a /path/to/folder -s "SharedFolder"`
+# Add a shared folder:  
+sudo sharing -a /path/to/folder -s "SharedFolder"
+```
 
 ## `shortcuts` - Manage macOS Shortcuts
 
@@ -1123,11 +1267,13 @@ To integrate Shortcuts into automation scripts, trigger workflows programmatical
 
 **Usage example:**
 
-- List all available shortcuts:  
-  `shortcuts list`
+```bash
+# List all available shortcuts:  
+shortcuts list
 
-- Run a shortcut named "Resize Images":  
-  `shortcuts run "Resize Images"`
+# Run a shortcut named "Resize Images":  
+shortcuts run "Resize Images"
+```
 
 ## `shutdown` - Shutdown or Restart the System
 
@@ -1139,11 +1285,13 @@ For scheduling system maintenance, ensuring clean shutdowns in scripts, or remot
 
 **Usage example:**
 
-- Shut down immediately:  
-  `sudo shutdown -h now`
+```bash
+# Shut down immediately:  
+sudo shutdown -h now
 
-- Restart after 1 minute:  
-  `sudo shutdown -r +1`
+# Restart after 1 minute:  
+sudo shutdown -r +1
+```
 
 ## `sips` - Scriptable Image Processing System
 
@@ -1155,11 +1303,13 @@ To batch process images, automate repetitive image editing tasks, or integrate i
 
 **Usage example:**
 
-- Resize an image to 800x600 pixels:  
-  `sips -z 600 800 input.jpg --out output.jpg`
+```bash
+# Resize an image to 800x600 pixels:  
+sips -z 600 800 input.jpg --out output.jpg
 
-- Convert an image to PNG format:  
-  `sips -s format png input.jpg --out output.png`
+# Convert an image to PNG format:  
+sips -s format png input.jpg --out output.png
+```
 
 ## `softwareupdate` - Manage Software Updates
 
@@ -1171,11 +1321,13 @@ To automate system updates, manage updates across multiple machines, or integrat
 
 **Usage example:**
 
-- List available updates:  
-  `softwareupdate -l`
+```bash
+# List available updates:  
+softwareupdate -l
 
-- Install all recommended updates:  
-  `sudo softwareupdate -i -r`
+# Install all recommended updates:  
+sudo softwareupdate -i -r
+```
 
 ## `spctl` - Security Policy Control
 
@@ -1187,11 +1339,13 @@ To adjust security settings for app execution, whitelist specific applications, 
 
 **Usage example:**
 
-- Add an application to the whitelist:  
-  `spctl --add /Applications/Example.app`
+```bash
+# Add an application to the whitelist:  
+spctl --add /Applications/Example.app
 
-- Check the status of an application:  
-  `spctl --assess --verbose=4 /Applications/Example.app`
+# Check the status of an application:  
+spctl --assess --verbose=4 /Applications/Example.app
+```
 
 ## `sw_vers` - Show macOS Version
 
@@ -1203,8 +1357,10 @@ To check system version information in scripts, ensure compatibility, or log sys
 
 **Usage example:**
 
-- Display macOS version information:  
-  `sw_vers`
+```bash
+# Display macOS version information:  
+sw_vers
+```
 
 ## `system_profiler` - System Configuration Report
 
@@ -1216,11 +1372,13 @@ For inventory management, diagnostics, or collecting system information for supp
 
 **Usage example:**
 
-- Generate a full system report:  
-  `system_profiler`
+```bash
+# Generate a full system report:  
+system_profiler
 
-- Save the report to a file:  
-  `system_profiler -detailLevel full > system_report.txt`
+# Save the report to a file:  
+system_profiler -detailLevel full > system_report.txt
+```
 
 ## `systemsetup` - Configure System Settings
 
@@ -1232,11 +1390,13 @@ To automate configuration tasks, standardize settings across multiple machines, 
 
 **Usage example:**
 
-- Set the time zone:  
-  `sudo systemsetup -settimezone "America/New_York"`
+```bash
+# Set the time zone:  
+sudo systemsetup -settimezone "America/New_York"
 
-- Enable network time synchronization:  
-  `sudo systemsetup -setusingnetworktime on`
+# Enable network time synchronization:  
+sudo systemsetup -setusingnetworktime on
+```
 
 ## `tab2space` - Convert Tabs to Spaces
 
@@ -1248,8 +1408,10 @@ To format code or text files according to style guidelines, or to prepare files 
 
 **Usage example:**
 
-- Convert tabs to spaces in a file:  
-  `tab2space -t 4 input.txt > output.txt`
+```bash
+# Convert tabs to spaces in a file:  
+tab2space -t 4 input.txt > output.txt
+```
 
 ## `taskpolicy` - Set Process Resource Policies
 
@@ -1261,8 +1423,10 @@ To limit the resource impact of a process, ensuring it doesn't interfere with ot
 
 **Usage example:**
 
-- Run a command with low CPU priority:  
-  `taskpolicy -c low command`
+```bash
+# Run a command with low CPU priority:  
+taskpolicy -c low command
+```
 
 ## `tccutil` - Privacy Database Management
 
@@ -1274,8 +1438,10 @@ To reset permissions for apps accessing the camera, microphone, or other sensiti
 
 **Usage example:**
 
-- Reset all permissions for an app:  
-  `tccutil reset All com.example.app`
+```bash
+# Reset all permissions for an app:  
+tccutil reset All com.example.app
+```
 
 ## `textutil` - Manipulate Text Files
 
@@ -1287,11 +1453,13 @@ To batch convert documents, extract text from rich text files, or automate text 
 
 **Usage example:**
 
-- Convert a Word document to plain text:  
-  `textutil -convert txt document.docx`
+```bash
+# Convert a Word document to plain text:  
+textutil -convert txt document.docx
 
-- Combine multiple text files into one RTF:  
-  `textutil -cat rtf file1.txt file2.txt -output combined.rtf`
+# Combine multiple text files into one RTF:  
+textutil -cat rtf file1.txt file2.txt -output combined.rtf
+```
 
 ## `tmutil` - Time Machine Utility
 
@@ -1303,11 +1471,13 @@ To automate backup processes, manage backup destinations, exclude items from bac
 
 **Usage example:**
 
-- Start a backup manually:  
-  `tmutil startbackup`
+```bash
+# Start a backup manually:  
+tmutil startbackup
 
-- Set a new backup destination:  
-  `sudo tmutil setdestination /Volumes/BackupDrive`
+# Set a new backup destination:  
+sudo tmutil setdestination /Volumes/BackupDrive
+```
 
 ## `trimforce` - Enable TRIM for Third-Party SSDs
 
@@ -1319,8 +1489,10 @@ If you're using a third-party SSD, enabling TRIM helps maintain optimal performa
 
 **Usage example:**
 
-- Enable TRIM support:  
-  `sudo trimforce enable`
+```bash
+# Enable TRIM support:  
+sudo trimforce enable
+```
 
 ## `ufs.util` - UFS Filesystem Utility
 
@@ -1332,8 +1504,10 @@ For managing UFS volumes, though it's largely obsolete in modern macOS environme
 
 **Usage example:**
 
-- Mount a UFS filesystem:  
-  `ufs.util -m disk2s1`
+```bash
+# Mount a UFS filesystem:  
+ufs.util -m disk2s1
+```
 
 ## `wait4path` - Wait for a Path to Become Available
 
@@ -1345,8 +1519,10 @@ To ensure that a script doesn't proceed until a necessary resource is available,
 
 **Usage example:**
 
-- Wait for a volume to mount:  
-  `wait4path /Volumes/ExternalDrive`
+```bash
+# Wait for a volume to mount:  
+wait4path /Volumes/ExternalDrive
+```
 
 ## `wdutil` - Wireless Diagnostics Utility
 
@@ -1358,8 +1534,10 @@ For troubleshooting Wi-Fi connectivity issues, analyzing signal strength, or col
 
 **Usage example:**
 
-- Start a Wi-Fi diagnostics capture:  
-  `sudo wdutil capture`
+```bash
+# Start a Wi-Fi diagnostics capture:  
+sudo wdutil capture
+```
 
 ## `xattr` - Extended Attributes Utility
 
@@ -1371,11 +1549,13 @@ To remove quarantine flags from downloaded files, manage custom metadata, or fix
 
 **Usage example:**
 
-- List extended attributes of a file:  
-  `xattr -l downloaded.app`
+```bash
+# List extended attributes of a file:  
+xattr -l downloaded.app
 
-- Remove the quarantine attribute:  
-  `xattr -d com.apple.quarantine downloaded.app`
+# Remove the quarantine attribute:  
+xattr -d com.apple.quarantine downloaded.app
+```
 
 ## `xcode-select` - Manage Command Line Developer Tools
 
@@ -1387,8 +1567,10 @@ To configure development environments, switch between multiple versions of Xcode
 
 **Usage example:**
 
-- Install command-line developer tools:  
-  `xcode-select --install`
+```bash
+# Install command-line developer tools:  
+xcode-select --install
 
-- Switch to a different Xcode version:  
-  `sudo xcode-select -s /Applications/Xcode_12.app`
+# Switch to a different Xcode version:  
+sudo xcode-select -s /Applications/Xcode_12.app
+```
