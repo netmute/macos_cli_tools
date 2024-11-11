@@ -1,6 +1,6 @@
 # macOS-Only Command-Line Tools
 
-A list of macOS-only command-line tools, including their functionalities and reasons you might want to use them.
+A list of macOS-only command-line tools, including their functionalities, usage examples, and reasons you might want to use them.
 
 ---
 
@@ -12,6 +12,11 @@ A list of macOS-only command-line tools, including their functionalities and rea
 **Why use it:**  
 If you need to batch-convert audio files, automate audio processing tasks, or prepare audio files for different devices and applications, `afconvert` provides a powerful way to script these conversions without using a GUI application.
 
+**Usage example:**
+
+- Convert an AIFF file to MP3:  
+  `afconvert input.aiff -o output.mp3 -f MP3`
+
 ---
 
 ## `afinfo` - Audio File Info
@@ -21,6 +26,11 @@ If you need to batch-convert audio files, automate audio processing tasks, or pr
 
 **Why use it:**  
 When managing audio libraries or processing audio files, you might need to verify file properties quickly. `afinfo` allows you to inspect these details directly from the terminal, which is helpful for scripting and automation.
+
+**Usage example:**
+
+- Display information about an audio file:  
+  `afinfo song.m4a`
 
 ---
 
@@ -32,6 +42,11 @@ When managing audio libraries or processing audio files, you might need to verif
 **Why use it:**  
 If you're working in a terminal session and want to listen to audio files without opening a separate application, `afplay` lets you play sounds directly. It's also useful in scripts where you want to provide auditory feedback.
 
+**Usage example:**
+
+- Play an audio file:  
+  `afplay notification.wav`
+
 ---
 
 ## `airport` - Manage Apple AirPort
@@ -41,6 +56,11 @@ If you're working in a terminal session and want to listen to audio files withou
 
 **Why use it:**  
 For troubleshooting Wi-Fi issues, automating network connections, or collecting Wi-Fi diagnostics, `airport` offers control over wireless interfaces without needing to navigate through system preferences.
+
+**Usage example:**
+
+- Scan for available Wi-Fi networks:  
+  `airport -s`
 
 ---
 
@@ -52,6 +72,11 @@ For troubleshooting Wi-Fi issues, automating network connections, or collecting 
 **Why use it:**  
 When you need to deploy a standard system image across multiple Macs, backup a disk, or restore a system from a disk image, `asr` provides an efficient way to perform these tasks via scripting.
 
+**Usage example:**
+
+- Restore a disk image to a volume:  
+  `sudo asr restore --source image.dmg --target /Volumes/TargetDrive --erase`
+
 ---
 
 ## `atsutil` - Font Registration System Utility
@@ -61,6 +86,11 @@ When you need to deploy a standard system image across multiple Macs, backup a d
 
 **Why use it:**  
 If you're experiencing problems with fonts not displaying correctly, corrupted fonts, or system slowdowns due to font issues, `atsutil` can help resolve these by clearing and rebuilding font caches.
+
+**Usage example:**
+
+- Reset font caches:  
+  `atsutil databases -remove`
 
 ---
 
@@ -72,6 +102,11 @@ If you're experiencing problems with fonts not displaying correctly, corrupted f
 **Why use it:**  
 Integrating `automator` into scripts enables you to automate complex tasks that involve GUI interactions, such as batch image processing or file organization, without manual intervention.
 
+**Usage example:**
+
+- Run an Automator workflow:  
+  `automator /path/to/workflow.workflow`
+
 ---
 
 ## `bless` - Set Volume Bootability and Startup Disk Options
@@ -81,6 +116,11 @@ Integrating `automator` into scripts enables you to automate complex tasks that 
 
 **Why use it:**  
 When setting up dual-boot systems, creating bootable external drives, or managing startup configurations remotely, `bless` provides the necessary control over boot settings.
+
+**Usage example:**
+
+- Set the startup disk to a specific volume:  
+  `sudo bless --mount /Volumes/BootVolume --setBoot`
 
 ---
 
@@ -92,6 +132,11 @@ When setting up dual-boot systems, creating bootable external drives, or managin
 **Why use it:**  
 Useful for ensuring long-running tasks, such as downloads, backups, or presentations, are not interrupted by the system entering sleep mode.
 
+**Usage example:**
+
+- Prevent sleep for 2 hours:  
+  `caffeinate -t 7200`
+
 ---
 
 ## `chflags` - Change a File or Folder's Flags
@@ -101,6 +146,14 @@ Useful for ensuring long-running tasks, such as downloads, backups, or presentat
 
 **Why use it:**  
 To protect critical files from accidental modification or deletion, or to hide files from standard directory listings without changing permissions.
+
+**Usage example:**
+
+- Make a file immutable:  
+  `chflags uchg important.doc`
+
+- Remove the immutable flag:  
+  `chflags nouchg important.doc`
 
 ---
 
@@ -112,6 +165,11 @@ To protect critical files from accidental modification or deletion, or to hide f
 **Why use it:**  
 If you're a developer distributing software on macOS, `codesign` ensures your apps are properly signed, which is essential for user trust and compliance with macOS security policies.
 
+**Usage example:**
+
+- Sign an application with a development certificate:  
+  `codesign -s "Developer ID Application: Your Name" /path/to/App.app`
+
 ---
 
 ## `createhomedir` - Create and Populate Home Directories
@@ -121,6 +179,11 @@ If you're a developer distributing software on macOS, `codesign` ensures your ap
 
 **Why use it:**  
 Administrators can automate the creation of home directories for new users, ensuring they have the necessary environment when they first log in.
+
+**Usage example:**
+
+- Create home directories for all users:  
+  `sudo createhomedir -c`
 
 ---
 
@@ -132,6 +195,14 @@ Administrators can automate the creation of home directories for new users, ensu
 **Why use it:**  
 Developers or advanced users may need to disable SIP temporarily to install certain system-level software or perform troubleshooting tasks that require modifying protected areas.
 
+**Usage example:**
+
+- Disable SIP (requires recovery mode):  
+  `csrutil disable`
+
+- Enable SIP:  
+  `csrutil enable`
+
 ---
 
 ## `cupsfilter` - Convert Files Using CUPS Filters
@@ -141,6 +212,11 @@ Developers or advanced users may need to disable SIP temporarily to install cert
 
 **Why use it:**  
 To convert documents to formats compatible with specific printers, or to process print jobs programmatically in custom printing workflows.
+
+**Usage example:**
+
+- Convert a PDF to a printer-specific format:  
+  `cupsfilter -m printer/foo input.pdf > output.pcl`
 
 ---
 
@@ -152,6 +228,14 @@ To convert documents to formats compatible with specific printers, or to process
 **Why use it:**  
 For tasks like preparing new disks, repairing disk errors, managing disk partitions, or scripting disk operations without using Disk Utility's GUI.
 
+**Usage example:**
+
+- List all disks and partitions:  
+  `diskutil list`
+
+- Erase a disk and format it as HFS+:  
+  `diskutil eraseDisk HFS+ NewDiskName /dev/disk2`
+
 ---
 
 ## `ditto` - Copy Files and Folders
@@ -161,6 +245,11 @@ For tasks like preparing new disks, repairing disk errors, managing disk partiti
 
 **Why use it:**  
 When `cp` isn't sufficient because it doesn't preserve all macOS-specific metadata, `ditto` ensures a faithful copy, making it ideal for backups and system migrations.
+
+**Usage example:**
+
+- Copy a folder and preserve metadata:  
+  `ditto /source/folder /destination/folder`
 
 ---
 
@@ -172,6 +261,11 @@ When `cp` isn't sufficient because it doesn't preserve all macOS-specific metada
 **Why use it:**  
 To clean up unnecessary files that can cause clutter or compatibility issues when transferring files to other operating systems or devices.
 
+**Usage example:**
+
+- Clean up a USB drive:  
+  `dot_clean /Volumes/USBDrive`
+
 ---
 
 ## `drutil` - Interact with CD/DVD Burners
@@ -181,6 +275,14 @@ To clean up unnecessary files that can cause clutter or compatibility issues whe
 
 **Why use it:**  
 For automating disc burning processes, managing discs in servers or kiosks, or controlling the drive without a GUI.
+
+**Usage example:**
+
+- Eject the disc tray:  
+  `drutil tray eject`
+
+- Burn an ISO image to disc:  
+  `drutil burn image.iso`
 
 ---
 
@@ -192,6 +294,11 @@ For automating disc burning processes, managing discs in servers or kiosks, or c
 **Why use it:**  
 When experiencing issues with user authentication, DNS resolution, or directory services, flushing the cache can resolve outdated or corrupt data problems.
 
+**Usage example:**
+
+- Flush DNS cache:  
+  `sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder`
+
 ---
 
 ## `dseditgroup` - Edit Groups
@@ -201,6 +308,11 @@ When experiencing issues with user authentication, DNS resolution, or directory 
 
 **Why use it:**  
 Administrators can script group management tasks, such as adding users to groups or setting up permissions, essential for managing multi-user systems.
+
+**Usage example:**
+
+- Add a user to the admin group:  
+  `sudo dseditgroup -o edit -a username -t user admin`
 
 ---
 
@@ -212,6 +324,14 @@ Administrators can script group management tasks, such as adding users to groups
 **Why use it:**  
 In situations where `sudo` is insufficient, enabling the root account allows for direct root login, though it should be used cautiously due to security risks.
 
+**Usage example:**
+
+- Enable the root user:  
+  `sudo dsenableroot`
+
+- Disable the root user:  
+  `sudo dsenableroot -d`
+
 ---
 
 ## `dsmemberutil` - View User and Group Rights
@@ -221,6 +341,11 @@ In situations where `sudo` is insufficient, enabling the root account allows for
 
 **Why use it:**  
 To verify group memberships, troubleshoot permission issues, or script checks on user access rights.
+
+**Usage example:**
+
+- Check if a user is in a group:  
+  `dsmemberutil checkmembership -U username -G groupname`
 
 ---
 
@@ -232,6 +357,14 @@ To verify group memberships, troubleshoot permission issues, or script checks on
 **Why use it:**  
 For automating user and group management, scripting directory service interactions, and performing bulk operations in enterprise environments.
 
+**Usage example:**
+
+- List all local users:  
+  `dscl . list /Users`
+
+- Create a new user:  
+  `sudo dscl . -create /Users/newuser`
+
 ---
 
 ## `execsnoop` - Snoop New Process Execution
@@ -241,6 +374,11 @@ For automating user and group management, scripting directory service interactio
 
 **Why use it:**  
 Useful for real-time monitoring of process execution, debugging, performance analysis, or security auditing to detect unexpected or malicious processes.
+
+**Usage example:**
+
+- Start monitoring process execution (requires sudo):  
+  `sudo execsnoop`
 
 ---
 
@@ -252,6 +390,14 @@ Useful for real-time monitoring of process execution, debugging, performance ana
 **Why use it:**  
 To automate the deployment of full-disk encryption across multiple systems, ensuring data security compliance in organizational environments.
 
+**Usage example:**
+
+- Enable FileVault:  
+  `sudo fdesetup enable`
+
+- Add a user to FileVault:  
+  `sudo fdesetup add -usertoadd username`
+
 ---
 
 ## `fs_usage` - Filesystem Activity Monitor
@@ -261,6 +407,11 @@ To automate the deployment of full-disk encryption across multiple systems, ensu
 
 **Why use it:**  
 For diagnosing performance issues, monitoring application file usage, or identifying processes causing high disk activity.
+
+**Usage example:**
+
+- Monitor filesystem activity:  
+  `sudo fs_usage`
 
 ---
 
@@ -272,6 +423,11 @@ For diagnosing performance issues, monitoring application file usage, or identif
 **Why use it:**  
 To inspect file properties that are not visible through standard commands, particularly when dealing with legacy Mac files.
 
+**Usage example:**
+
+- Get information about a file:  
+  `GetFileInfo myfile.txt`
+
 ---
 
 ## `hdiutil` - Manipulate Disk Images
@@ -281,6 +437,11 @@ To inspect file properties that are not visible through standard commands, parti
 
 **Why use it:**  
 For creating custom disk images for software distribution, backups, encrypted volumes, or automating disk image tasks in scripts.
+
+**Usage example:**
+
+- Create a disk image from a folder:  
+  `hdiutil create -volname MyDisk -srcfolder /path/to/folder -ov -format UDZO mydisk.dmg`
 
 ---
 
@@ -292,6 +453,11 @@ For creating custom disk images for software distribution, backups, encrypted vo
 **Why use it:**  
 To automate software installations, especially in deployment scripts or when setting up multiple systems without user interaction.
 
+**Usage example:**
+
+- Install a package:  
+  `sudo installer -pkg package.pkg -target /`
+
 ---
 
 ## `iosnoop` - Monitor I/O Events
@@ -301,6 +467,11 @@ To automate software installations, especially in deployment scripts or when set
 
 **Why use it:**  
 For performance tuning, identifying I/O bottlenecks, or monitoring disk activity for specific applications.
+
+**Usage example:**
+
+- Start monitoring I/O events (requires sudo):  
+  `sudo iosnoop`
 
 ---
 
@@ -312,6 +483,11 @@ For performance tuning, identifying I/O bottlenecks, or monitoring disk activity
 **Why use it:**  
 To locate specific kernel extensions when troubleshooting system issues or verifying driver installations.
 
+**Usage example:**
+
+- Find all kexts with a specific bundle identifier:  
+  `kextfind -b com.example.driver`
+
 ---
 
 ## `kextstat` - Kernel Extension Status
@@ -321,6 +497,11 @@ To locate specific kernel extensions when troubleshooting system issues or verif
 
 **Why use it:**  
 For diagnosing kernel-related problems, ensuring necessary drivers are loaded, or checking for conflicting extensions.
+
+**Usage example:**
+
+- List all loaded kernel extensions:  
+  `kextstat`
 
 ---
 
@@ -332,6 +513,11 @@ For diagnosing kernel-related problems, ensuring necessary drivers are loaded, o
 **Why use it:**  
 To remove problematic drivers without rebooting, update extensions, or temporarily disable functionality for testing.
 
+**Usage example:**
+
+- Unload a kernel extension:  
+  `sudo kextunload /System/Library/Extensions/Example.kext`
+
 ---
 
 ## `kickstart` - Configure Apple Remote Desktop
@@ -341,6 +527,11 @@ To remove problematic drivers without rebooting, update extensions, or temporari
 
 **Why use it:**  
 For setting up remote administration capabilities on multiple Macs, automating ARD configurations, or deploying settings in managed environments.
+
+**Usage example:**
+
+- Enable ARD and allow access for all users:  
+  `sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate`
 
 ---
 
@@ -352,6 +543,14 @@ For setting up remote administration capabilities on multiple Macs, automating A
 **Why use it:**  
 To control background services, schedule tasks, or manage startup items, essential for system administration and automation.
 
+**Usage example:**
+
+- Load a launch agent:  
+  `launchctl load ~/Library/LaunchAgents/com.example.agent.plist`
+
+- List all loaded services:  
+  `launchctl list`
+
 ---
 
 ## `lsregister` - Launch Services Database Management
@@ -361,6 +560,11 @@ To control background services, schedule tasks, or manage startup items, essenti
 
 **Why use it:**  
 When experiencing issues like incorrect file associations, applications not appearing in "Open With" menus, or other anomalies, `lsregister` can help fix them.
+
+**Usage example:**
+
+- Rebuild the Launch Services database:  
+  `/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user`
 
 ---
 
@@ -372,6 +576,11 @@ When experiencing issues like incorrect file associations, applications not appe
 **Why use it:**  
 To audit installed files, verify package installations, or understand what files are associated with a specific package.
 
+**Usage example:**
+
+- List files in a BOM file:  
+  `lsbom /var/db/receipts/com.example.pkg.bom`
+
 ---
 
 ## `mdfind` - Spotlight Search from the Command Line
@@ -381,6 +590,11 @@ To audit installed files, verify package installations, or understand what files
 
 **Why use it:**  
 To locate files quickly without scanning the entire filesystem, useful in scripts or when the GUI is unavailable.
+
+**Usage example:**
+
+- Find files with "report" in the name:  
+  `mdfind "kMDItemFSName == '*report*'"`
 
 ---
 
@@ -392,6 +606,11 @@ To locate files quickly without scanning the entire filesystem, useful in script
 **Why use it:**  
 To manually update the Spotlight index after adding or modifying files, ensuring they appear in search results promptly.
 
+**Usage example:**
+
+- Index a folder:  
+  `mdimport /path/to/folder`
+
 ---
 
 ## `mdls` - Display Metadata Attributes
@@ -401,6 +620,11 @@ To manually update the Spotlight index after adding or modifying files, ensuring
 
 **Why use it:**  
 To inspect file metadata for debugging, data analysis, or to use in scripts that process files based on attributes.
+
+**Usage example:**
+
+- Show metadata of a file:  
+  `mdls document.pdf`
 
 ---
 
@@ -412,6 +636,14 @@ To inspect file metadata for debugging, data analysis, or to use in scripts that
 **Why use it:**  
 To prevent indexing on volumes where it's unnecessary (like backup drives), or to rebuild the index when it's corrupted.
 
+**Usage example:**
+
+- Disable indexing on a volume:  
+  `sudo mdutil -i off /Volumes/ExternalDrive`
+
+- Rebuild the index:  
+  `sudo mdutil -E /`
+
 ---
 
 ## `mkfile` - Create a File with a Specific Size
@@ -421,6 +653,11 @@ To prevent indexing on volumes where it's unnecessary (like backup drives), or t
 
 **Why use it:**  
 For testing disk space usage, simulating large files, benchmarking, or creating placeholder files.
+
+**Usage example:**
+
+- Create a 100 MB file:  
+  `mkfile 100m largefile.dat`
 
 ---
 
@@ -432,6 +669,11 @@ For testing disk space usage, simulating large files, benchmarking, or creating 
 **Why use it:**  
 To diagnose internet connection issues, test network speed, or monitor network quality over time.
 
+**Usage example:**
+
+- Run a network quality test:  
+  `networkQuality`
+
 ---
 
 ## `networksetup` - Configure Network Settings
@@ -441,6 +683,11 @@ To diagnose internet connection issues, test network speed, or monitor network q
 
 **Why use it:**  
 To automate network setup, switch configurations when moving between locations, or manage settings on headless systems.
+
+**Usage example:**
+
+- Set DNS servers for Wi-Fi:  
+  `networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4`
 
 ---
 
@@ -452,6 +699,11 @@ To automate network setup, switch configurations when moving between locations, 
 **Why use it:**  
 To access NTFS-formatted drives on macOS, particularly for reading data from Windows-formatted disks.
 
+**Usage example:**
+
+- Mount an NTFS volume (usually handled automatically):  
+  `ntfs.util -m disk2s1`
+
 ---
 
 ## `nvram` - Manipulate Firmware Variables
@@ -461,6 +713,14 @@ To access NTFS-formatted drives on macOS, particularly for reading data from Win
 
 **Why use it:**  
 For configuring low-level system settings, troubleshooting boot issues, or setting hardware preferences.
+
+**Usage example:**
+
+- Reset NVRAM:  
+  `sudo nvram -c`
+
+- Set a boot argument:  
+  `sudo nvram boot-args="-v"`
 
 ---
 
@@ -472,6 +732,17 @@ For configuring low-level system settings, troubleshooting boot issues, or setti
 **Why use it:**  
 To launch applications or files from the command line, integrate with scripts, or automate workflows that require opening GUI elements.
 
+**Usage example:**
+
+- Open a file with the default application:  
+  `open report.pdf`
+
+- Open a URL in the default browser:  
+  `open https://www.example.com`
+
+- Open a file with a specific application:  
+  `open -a TextEdit notes.txt`
+
 ---
 
 ## `opensnoop` - Monitor File Opens
@@ -481,6 +752,11 @@ To launch applications or files from the command line, integrate with scripts, o
 
 **Why use it:**  
 For security auditing, troubleshooting file access issues, or monitoring application behavior regarding file usage.
+
+**Usage example:**
+
+- Start monitoring file opens (requires sudo):  
+  `sudo opensnoop`
 
 ---
 
@@ -492,6 +768,11 @@ For security auditing, troubleshooting file access issues, or monitoring applica
 **Why use it:**  
 To automate the compilation of scripts for distribution, integrate scripting into build processes, or protect source code.
 
+**Usage example:**
+
+- Compile an AppleScript into an application:  
+  `osacompile -o MyApp.app myscript.scpt`
+
 ---
 
 ## `osascript` - Execute AppleScript and Other OSA Scripts
@@ -501,6 +782,14 @@ To automate the compilation of scripts for distribution, integrate scripting int
 
 **Why use it:**  
 To automate tasks that require interaction with GUI applications or system services that are scriptable via AppleScript.
+
+**Usage example:**
+
+- Run an AppleScript file:  
+  `osascript myscript.scpt`
+
+- Execute an inline AppleScript:  
+  `osascript -e 'display dialog "Hello, world!"'`
 
 ---
 
@@ -512,6 +801,11 @@ To automate tasks that require interaction with GUI applications or system servi
 **Why use it:**  
 To programmatically copy text or data into the clipboard from scripts or command output.
 
+**Usage example:**
+
+- Copy the contents of a file to the clipboard:  
+  `cat file.txt | pbcopy`
+
 ---
 
 ## `pbpaste` - Paste Data from the Clipboard
@@ -521,6 +815,11 @@ To programmatically copy text or data into the clipboard from scripts or command
 
 **Why use it:**  
 To retrieve data from the clipboard for use in scripts or to process clipboard contents via command-line tools.
+
+**Usage example:**
+
+- Save the clipboard contents to a file:  
+  `pbpaste > clipboard.txt`
 
 ---
 
@@ -532,6 +831,11 @@ To retrieve data from the clipboard for use in scripts or to process clipboard c
 **Why use it:**  
 While not typically used directly, understanding `pbs` can help in troubleshooting clipboard issues or when needing to restart the service.
 
+**Usage example:**
+
+- Restart the pasteboard server:  
+  `killall pbs`
+
 ---
 
 ## `pdisk` - Apple Partition Table Editor
@@ -541,6 +845,11 @@ While not typically used directly, understanding `pbs` can help in troubleshooti
 
 **Why use it:**  
 For managing partitions on legacy systems or disks that require APM, which is necessary for older Mac hardware or specific compatibility scenarios.
+
+**Usage example:**
+
+- List partitions on a disk:  
+  `pdisk /dev/disk0 -dump`
 
 ---
 
@@ -552,6 +861,14 @@ For managing partitions on legacy systems or disks that require APM, which is ne
 **Why use it:**  
 To enhance network security by controlling inbound and outbound traffic, set up complex firewall rules, or manage network address translation.
 
+**Usage example:**
+
+- Load a PF configuration file:  
+  `sudo pfctl -f /etc/pf.conf`
+
+- Enable the PF firewall:  
+  `sudo pfctl -e`
+
 ---
 
 ## `pkgbuild` - Build Installer Packages
@@ -561,6 +878,11 @@ To enhance network security by controlling inbound and outbound traffic, set up 
 
 **Why use it:**  
 Developers and system administrators can package applications, scripts, or settings for deployment across multiple systems.
+
+**Usage example:**
+
+- Build a package from a component:  
+  `pkgbuild --root /path/to/root --identifier com.example.pkg --version 1.0 example.pkg`
 
 ---
 
@@ -572,6 +894,14 @@ Developers and system administrators can package applications, scripts, or setti
 **Why use it:**  
 To troubleshoot installation issues, verify what files were installed by a package, or clean up package receipts.
 
+**Usage example:**
+
+- List all installed packages:  
+  `pkgutil --pkgs`
+
+- Forget a package (remove its receipt):  
+  `sudo pkgutil --forget com.example.pkg`
+
 ---
 
 ## `plutil` - Property List Utility
@@ -581,6 +911,14 @@ To troubleshoot installation issues, verify what files were installed by a packa
 
 **Why use it:**  
 To validate plist files, convert between binary and XML formats, or automate changes to configuration files.
+
+**Usage example:**
+
+- Convert a binary plist to XML:  
+  `plutil -convert xml1 settings.plist`
+
+- Validate a plist file:  
+  `plutil settings.plist`
 
 ---
 
@@ -592,6 +930,14 @@ To validate plist files, convert between binary and XML formats, or automate cha
 **Why use it:**  
 To optimize power usage, extend battery life, or configure systems for specific operational needs, such as servers or kiosks.
 
+**Usage example:**
+
+- Set the display sleep timer to 15 minutes:  
+  `sudo pmset displaysleep 15`
+
+- Disable sleep mode:  
+  `sudo pmset sleep 0`
+
 ---
 
 ## `powermetrics` - Power and Performance Statistics
@@ -601,6 +947,11 @@ To optimize power usage, extend battery life, or configure systems for specific 
 
 **Why use it:**  
 For performance analysis, diagnosing battery drain issues, or monitoring system health under different workloads.
+
+**Usage example:**
+
+- Monitor CPU power usage:  
+  `sudo powermetrics --samplers cpu_power`
 
 ---
 
@@ -612,6 +963,14 @@ For performance analysis, diagnosing battery drain issues, or monitoring system 
 **Why use it:**  
 To deploy settings across multiple machines, enforce security policies, or manage devices in an enterprise environment.
 
+**Usage example:**
+
+- List installed profiles:  
+  `profiles -P`
+
+- Install a profile:  
+  `sudo profiles -I -F /path/to/profile.mobileconfig`
+
 ---
 
 ## `purge` - Clear Disk Cache
@@ -621,6 +980,11 @@ To deploy settings across multiple machines, enforce security policies, or manag
 
 **Why use it:**  
 For testing applications under low-memory conditions, clearing inactive memory, or troubleshooting memory-related performance issues.
+
+**Usage example:**
+
+- Clear disk caches:  
+  `sudo purge`
 
 ---
 
@@ -632,6 +996,14 @@ For testing applications under low-memory conditions, clearing inactive memory, 
 **Why use it:**  
 To troubleshoot preview issues, test custom Quick Look plugins, or force the generation of new previews.
 
+**Usage example:**
+
+- Preview a file using Quick Look:  
+  `qlmanage -p document.pdf`
+
+- Reset the Quick Look server:  
+  `qlmanage -r`
+
 ---
 
 ## `ReportCrash` - Crash Reporting
@@ -641,6 +1013,14 @@ To troubleshoot preview issues, test custom Quick Look plugins, or force the gen
 
 **Why use it:**  
 Developers might disable `ReportCrash` during testing to prevent interference, or re-enable it to capture crash logs for troubleshooting.
+
+**Usage example:**
+
+- Disable crash reporting:  
+  `launchctl unload -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist`
+
+- Enable crash reporting:  
+  `launchctl load -w /System/Library/LaunchAgents/com.apple.ReportCrash.plist`
 
 ---
 
@@ -652,6 +1032,14 @@ Developers might disable `ReportCrash` during testing to prevent interference, o
 **Why use it:**  
 For accessibility purposes, creating spoken alerts in scripts, generating audio versions of text, or just for fun.
 
+**Usage example:**
+
+- Speak a phrase:  
+  `say "Hello, world!"`
+
+- Save speech to an audio file:  
+  `say -o greeting.aiff "Welcome to the system"`
+
 ---
 
 ## `screencapture` - Capture Screenshots
@@ -661,6 +1049,14 @@ For accessibility purposes, creating spoken alerts in scripts, generating audio 
 
 **Why use it:**  
 To automate screenshot capture in scripts, document processes, or capture images in remote sessions.
+
+**Usage example:**
+
+- Capture the entire screen:  
+  `screencapture screen.jpg`
+
+- Capture a selected window after a delay:  
+  `screencapture -w -T5 window.png`
 
 ---
 
@@ -672,6 +1068,14 @@ To automate screenshot capture in scripts, document processes, or capture images
 **Why use it:**  
 To quickly switch between different network setups, such as home and office networks, without manual reconfiguration.
 
+**Usage example:**
+
+- List available network locations:  
+  `scselect`
+
+- Switch to a network location named "Office":  
+  `scselect "Office"`
+
 ---
 
 ## `scutil` - System Configuration Utility
@@ -681,6 +1085,14 @@ To quickly switch between different network setups, such as home and office netw
 
 **Why use it:**  
 For advanced network configuration, scripting network setups, or troubleshooting connectivity issues.
+
+**Usage example:**
+
+- Display the current hostname:  
+  `scutil --get HostName`
+
+- Set a new hostname:  
+  `sudo scutil --set HostName newhostname`
 
 ---
 
@@ -692,6 +1104,14 @@ For advanced network configuration, scripting network setups, or troubleshooting
 **Why use it:**  
 To automate certificate deployment, manage authentication credentials, or script secure interactions in applications.
 
+**Usage example:**
+
+- List all keychains:  
+  `security list-keychains`
+
+- Import a certificate:  
+  `security import cert.pem -k ~/Library/Keychains/login.keychain-db`
+
 ---
 
 ## `serverinfo` - macOS Server Information
@@ -701,6 +1121,11 @@ To automate certificate deployment, manage authentication credentials, or script
 
 **Why use it:**  
 To verify server configurations, check for installed services, or script server management tasks.
+
+**Usage example:**
+
+- Display server version:  
+  `serverinfo --version`
 
 ---
 
@@ -712,6 +1137,14 @@ To verify server configurations, check for installed services, or script server 
 **Why use it:**  
 To adjust file properties not accessible through standard tools, useful in batch operations or when preparing files for specific applications.
 
+**Usage example:**
+
+- Set the creation date of a file:  
+  `SetFile -d "09/30/2023 12:00:00" document.txt`
+
+- Make a file invisible:  
+  `SetFile -a V hiddenfile.txt`
+
 ---
 
 ## `sharing` - Configure File Sharing
@@ -721,6 +1154,14 @@ To adjust file properties not accessible through standard tools, useful in batch
 
 **Why use it:**  
 To automate the setup of shared resources, manage access permissions, or configure sharing services without using the GUI.
+
+**Usage example:**
+
+- List all shared folders:  
+  `sharing -l`
+
+- Add a shared folder:  
+  `sudo sharing -a /path/to/folder -s "SharedFolder"`
 
 ---
 
@@ -732,6 +1173,14 @@ To automate the setup of shared resources, manage access permissions, or configu
 **Why use it:**  
 To integrate Shortcuts into automation scripts, trigger workflows programmatically, or manage shortcuts in bulk.
 
+**Usage example:**
+
+- List all available shortcuts:  
+  `shortcuts list`
+
+- Run a shortcut named "Resize Images":  
+  `shortcuts run "Resize Images"`
+
 ---
 
 ## `shutdown` - Shutdown or Restart the System
@@ -741,6 +1190,14 @@ To integrate Shortcuts into automation scripts, trigger workflows programmatical
 
 **Why use it:**  
 For scheduling system maintenance, ensuring clean shutdowns in scripts, or remotely controlling system power states.
+
+**Usage example:**
+
+- Shut down immediately:  
+  `sudo shutdown -h now`
+
+- Restart after 1 minute:  
+  `sudo shutdown -r +1`
 
 ---
 
@@ -752,6 +1209,14 @@ For scheduling system maintenance, ensuring clean shutdowns in scripts, or remot
 **Why use it:**  
 To batch process images, automate repetitive image editing tasks, or integrate image manipulation into larger scripts.
 
+**Usage example:**
+
+- Resize an image to 800x600 pixels:  
+  `sips -z 600 800 input.jpg --out output.jpg`
+
+- Convert an image to PNG format:  
+  `sips -s format png input.jpg --out output.png`
+
 ---
 
 ## `softwareupdate` - Manage Software Updates
@@ -761,6 +1226,14 @@ To batch process images, automate repetitive image editing tasks, or integrate i
 
 **Why use it:**  
 To automate system updates, manage updates across multiple machines, or integrate updates into maintenance scripts.
+
+**Usage example:**
+
+- List available updates:  
+  `softwareupdate -l`
+
+- Install all recommended updates:  
+  `sudo softwareupdate -i -r`
 
 ---
 
@@ -772,6 +1245,14 @@ To automate system updates, manage updates across multiple machines, or integrat
 **Why use it:**  
 To adjust security settings for app execution, whitelist specific applications, or troubleshoot Gatekeeper-related issues.
 
+**Usage example:**
+
+- Add an application to the whitelist:  
+  `spctl --add /Applications/Example.app`
+
+- Check the status of an application:  
+  `spctl --assess --verbose=4 /Applications/Example.app`
+
 ---
 
 ## `sw_vers` - Show macOS Version
@@ -781,6 +1262,11 @@ To adjust security settings for app execution, whitelist specific applications, 
 
 **Why use it:**  
 To check system version information in scripts, ensure compatibility, or log system details.
+
+**Usage example:**
+
+- Display macOS version information:  
+  `sw_vers`
 
 ---
 
@@ -792,6 +1278,14 @@ To check system version information in scripts, ensure compatibility, or log sys
 **Why use it:**  
 For inventory management, diagnostics, or collecting system information for support purposes.
 
+**Usage example:**
+
+- Generate a full system report:  
+  `system_profiler`
+
+- Save the report to a file:  
+  `system_profiler -detailLevel full > system_report.txt`
+
 ---
 
 ## `systemsetup` - Configure System Settings
@@ -801,6 +1295,14 @@ For inventory management, diagnostics, or collecting system information for supp
 
 **Why use it:**  
 To automate configuration tasks, standardize settings across multiple machines, or adjust settings without user interaction.
+
+**Usage example:**
+
+- Set the time zone:  
+  `sudo systemsetup -settimezone "America/New_York"`
+
+- Enable network time synchronization:  
+  `sudo systemsetup -setusingnetworktime on`
 
 ---
 
@@ -812,6 +1314,11 @@ To automate configuration tasks, standardize settings across multiple machines, 
 **Why use it:**  
 To format code or text files according to style guidelines, or to prepare files for environments where tabs cause issues.
 
+**Usage example:**
+
+- Convert tabs to spaces in a file:  
+  `tab2space -t 4 input.txt > output.txt`
+
 ---
 
 ## `taskpolicy` - Set Process Resource Policies
@@ -821,6 +1328,11 @@ To format code or text files according to style guidelines, or to prepare files 
 
 **Why use it:**  
 To limit the resource impact of a process, ensuring it doesn't interfere with other system activities.
+
+**Usage example:**
+
+- Run a command with low CPU priority:  
+  `taskpolicy -c low command`
 
 ---
 
@@ -832,6 +1344,11 @@ To limit the resource impact of a process, ensuring it doesn't interfere with ot
 **Why use it:**  
 To reset permissions for apps accessing the camera, microphone, or other sensitive data, useful in troubleshooting or scripting privacy settings.
 
+**Usage example:**
+
+- Reset all permissions for an app:  
+  `tccutil reset All com.example.app`
+
 ---
 
 ## `textutil` - Manipulate Text Files
@@ -841,6 +1358,14 @@ To reset permissions for apps accessing the camera, microphone, or other sensiti
 
 **Why use it:**  
 To batch convert documents, extract text from rich text files, or automate text processing tasks.
+
+**Usage example:**
+
+- Convert a Word document to plain text:  
+  `textutil -convert txt document.docx`
+
+- Combine multiple text files into one RTF:  
+  `textutil -cat rtf file1.txt file2.txt -output combined.rtf`
 
 ---
 
@@ -852,6 +1377,14 @@ To batch convert documents, extract text from rich text files, or automate text 
 **Why use it:**  
 To automate backup processes, manage backup destinations, exclude items from backups, or restore data.
 
+**Usage example:**
+
+- Start a backup manually:  
+  `tmutil startbackup`
+
+- Set a new backup destination:  
+  `sudo tmutil setdestination /Volumes/BackupDrive`
+
 ---
 
 ## `trimforce` - Enable TRIM for Third-Party SSDs
@@ -861,6 +1394,11 @@ To automate backup processes, manage backup destinations, exclude items from bac
 
 **Why use it:**  
 If you're using a third-party SSD, enabling TRIM helps maintain optimal performance, though it should be used with caution.
+
+**Usage example:**
+
+- Enable TRIM support:  
+  `sudo trimforce enable`
 
 ---
 
@@ -872,6 +1410,11 @@ If you're using a third-party SSD, enabling TRIM helps maintain optimal performa
 **Why use it:**  
 For managing UFS volumes, though it's largely obsolete in modern macOS environments.
 
+**Usage example:**
+
+- Mount a UFS filesystem:  
+  `ufs.util -m disk2s1`
+
 ---
 
 ## `wait4path` - Wait for a Path to Become Available
@@ -881,6 +1424,11 @@ For managing UFS volumes, though it's largely obsolete in modern macOS environme
 
 **Why use it:**  
 To ensure that a script doesn't proceed until a necessary resource is available, such as an external drive or network share.
+
+**Usage example:**
+
+- Wait for a volume to mount:  
+  `wait4path /Volumes/ExternalDrive`
 
 ---
 
@@ -892,6 +1440,11 @@ To ensure that a script doesn't proceed until a necessary resource is available,
 **Why use it:**  
 For troubleshooting Wi-Fi connectivity issues, analyzing signal strength, or collecting data for support.
 
+**Usage example:**
+
+- Start a Wi-Fi diagnostics capture:  
+  `sudo wdutil capture`
+
 ---
 
 ## `xattr` - Extended Attributes Utility
@@ -901,6 +1454,14 @@ For troubleshooting Wi-Fi connectivity issues, analyzing signal strength, or col
 
 **Why use it:**  
 To remove quarantine flags from downloaded files, manage custom metadata, or fix issues caused by extended attributes.
+
+**Usage example:**
+
+- List extended attributes of a file:  
+  `xattr -l downloaded.app`
+
+- Remove the quarantine attribute:  
+  `xattr -d com.apple.quarantine downloaded.app`
 
 ---
 
@@ -912,5 +1473,12 @@ To remove quarantine flags from downloaded files, manage custom metadata, or fix
 **Why use it:**  
 To configure development environments, switch between multiple versions of Xcode, or install essential build tools.
 
----
+**Usage example:**
 
+- Install command-line developer tools:  
+  `xcode-select --install`
+
+- Switch to a different Xcode version:  
+  `sudo xcode-select -s /Applications/Xcode_12.app`
+
+---
